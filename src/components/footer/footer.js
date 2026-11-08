@@ -7,7 +7,86 @@ class Footer extends HTMLElement {
     render(){
         this.shadowRoot.innerHTML = 
         `
-            <link rel="stylesheet" href="/src/components/footer/footer-style.css"/>
+            <style>
+                @import url(./assets/styles/global.css);
+                @import url(./assets/styles/reset.css);
+
+                .footer {
+                background-color: var(--bg-surface);
+                border-top: 1px solid var(--border-color);
+                margin-top: auto;
+                padding: 0 var(--space-lg);
+                }
+
+                .footer-top {
+                padding: var(--space-2xl) 0 var(--space-xl);
+                }
+
+                .footer-top-inner {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+                gap: var(--space-2xl);
+                }
+
+                .brand-desc {
+                font-size: var(--font-size-sm);
+                color: var(--text-muted);
+                margin-top: var(--space-md);
+                margin-bottom: var(--space-lg);
+                line-height: 1.6;
+                }
+
+                .social-links {
+                display: flex;
+                gap: var(--space-sm);
+                }
+
+                .social-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 36px;
+                height: 36px;
+                border-radius: var(--radius-full);
+                background-color: var(--bg-subtle);
+                color: var(--text-muted);
+                text-decoration: none;
+                transition: all var(--transition-fast);
+                }
+
+                .social-btn:hover {
+                background-color: var(--primary-color);
+                color: var(--text-inverse);
+                }
+
+                .footer-heading {
+                font-size: var(--font-size-base);
+                font-weight: var(--font-weight-semibold);
+                color: var(--text-main);
+                margin-top: 0;
+                margin-bottom: var(--space-lg);
+                }
+
+                .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: var(--space-sm);
+                }
+
+                .footer-links a {
+                font-size: var(--font-size-sm);
+                color: var(--text-muted);
+                text-decoration: none;
+                transition: color var(--transition-fast);
+                }
+
+                .footer-links a:hover {
+                color: var(--primary-color);
+                }
+            </style>
             <footer class="footer">
                 <div class="footer-top">
                     <div class="container footer-top-inner">

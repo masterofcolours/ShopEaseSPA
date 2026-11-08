@@ -446,7 +446,10 @@ class Header extends HTMLElement {
                 </nav>
             </header>
 
-        `;
+        `
+        returnSearchValue()
+        
+        ;
 
         this.unSubscribe = newStore.subscribe(this);
         this.shadowRoot.querySelector(".cart-btn").addEventListener("click", ()=>{

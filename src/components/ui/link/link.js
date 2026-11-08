@@ -9,7 +9,58 @@ class Link extends HTMLElement {
     render(){
         this.shadowRoot.innerHTML = 
         `
-            <link rel="stylesheet" href="/src/components/ui/link/link-style.css"/>
+            <style>
+                :host {
+                    display: inline-block;
+                    cursor: pointer;
+                }
+
+                .custom-link {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    padding: var(--space-sm, 0.5rem) var(--space-md, 1rem);
+                    background-color: var(--primary-color, #2563eb);
+                    color: var(--text-inverse, #ffffff);
+                    border-radius: var(--radius-md, 0.5rem);
+                    font-weight: var(--font-weight-medium, 500);
+                    transition: background-color var(--transition-fast, 150ms);
+                }
+
+                slot{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                }
+
+                span{
+                    display: block;
+                    width: 100%;
+                }
+
+                .custom-link:hover {
+                    background-color: var(--primary-hover, #1d4ed8);
+                }
+
+                .custom-link p {
+                    margin: 0;
+                }
+
+                .custom-link p {
+                color: var(--text-muted);
+                text-decoration: none;
+                margin-left: var(--space-md);
+                transition: color var(--transition-fast);
+                }
+
+                p:hover {
+                color: var(--primary-color);
+                }
+
+            </style>
             <div class="custome-link">
                 <slot></slot>
             </div>

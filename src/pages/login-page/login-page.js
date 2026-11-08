@@ -209,7 +209,7 @@ class LoginPage extends HTMLElement {
         </div>
 
         <div class="login-image">
-          <img src="/assets/login/login.png" >
+          <img src="./assets/login/login.png" >
         </div>
 
       </div>

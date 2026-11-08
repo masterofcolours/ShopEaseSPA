@@ -14,7 +14,54 @@ class CartItem extends HTMLElement {
         this.id = this.getAttribute('id') || '';
         this.shadowRoot.innerHTML = 
         `
-            <link rel="stylesheet" href="/src/components/cart-item/cart-item.css"/>
+            <style>
+                :root{
+                    display: block;
+                    
+                }
+
+                .cart-item{
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    border-bottom:2px solid var(--border-color);
+                    margin: 10px 0;
+                    padding: 10px 10px;
+                }
+
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+
+                .image-container{
+                    max-width: 100px;
+                    width: 100px;
+                    height: 100px;
+                    max-height: 100px;
+                    overflow: hidden;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 10px;
+                }
+
+                .content{
+                    max-width: 8%;
+                    min-width: 80%;
+                    padding: 20px 0;
+                }
+
+                .close{
+                    cursor: pointer;
+                    position: absolute;
+                    top: 10px;
+                    right: 10px;
+                }
+            
+            </style>
 
             <div class="cart-item">
                 <div class="image-container">

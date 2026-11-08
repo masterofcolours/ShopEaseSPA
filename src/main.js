@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('popstate', () => {
   
   const currentPath = String(window.location.pathname).toLowerCase() === '/' 
-  ? String(window.location.pathname).toLowerCase() :  
+  ? String(window.location.pathname).toLowerCase() + "ShopEaseSPA" :  
   String(window.location.pathname).toLowerCase().includes("product/") ? 
   String(window.location.pathname).toLowerCase() : String(window.location.pathname).toLowerCase() + "/";
   

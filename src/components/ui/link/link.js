@@ -79,7 +79,7 @@ class Link extends HTMLElement {
                 window.history.pushState({}, '', targetPath);
             }else{
                 if(this.path  === "/"){
-                    const targetPath = `/`;
+                    const targetPath = `/ShopEaseSPA`;
                     window.history.pushState({}, '', targetPath);
                 }else{
                     const targetPath = `/${this.getAttribute("name")}`;

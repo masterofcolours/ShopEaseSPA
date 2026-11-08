@@ -9,31 +9,31 @@ class Home extends HTMLElement {
         `
             <style>
                 :host {
-                display: block;
+                    display: block;
                 }
 
                 .hero {
-                background: linear-gradient(135deg, var(--bg-subtle, #f1f5f9), var(--border-color, #e2e8f0));
-                padding: var(--space-2xl, 3rem) var(--space-md, 1rem);
-                text-align: center;
-                border-bottom: 1px solid var(--border-color, #e2e8f0);
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: var(--space-sm);
+                    background: linear-gradient(135deg, var(--bg-subtle, #f1f5f9), var(--border-color, #e2e8f0));
+                    padding: var(--space-2xl, 3rem) var(--space-md, 1rem);
+                    text-align: center;
+                    border-bottom: 1px solid var(--border-color, #e2e8f0);
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: var(--space-sm);
                 }
 
                 .hero-pic{
-                width: 49%;
+                    width: 49%;
                 }
 
                 .hero-pic img{
-                width: 100%;
-                height: auto;
+                    width: 100%;
+                    height: auto;
                 }
 
                 .hero-text{
-                width: 49%;
+                    width: 49%;
                 }
 
                 .hero-title {

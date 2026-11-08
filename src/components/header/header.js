@@ -15,8 +15,8 @@ class Header extends HTMLElement {
         this.shadowRoot.innerHTML = 
         `
             <style>
-                @import url(/assets/styles/global.css);
-                @import url(/assets/styles/reset.css);
+                @import url(./assets/styles/global.css);
+                @import url(./assets/styles/reset.css);
 
                 .header {
                 z-index: var(--z-header);

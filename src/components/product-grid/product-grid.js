@@ -48,7 +48,7 @@ class ProductGrid extends HTMLElement {
 
       <div class="grid-container">
         ${
-          this._products.length > 0
+          (this._products?.length || 0) > 0
             ? this._products.map(product => `
                 <product-component
                   title="${product.title}" 

@@ -1,5 +1,6 @@
-@import url(../../assets/styles/global.css);
-@import url(../../assets/styles/reset.css);
+@import url(/assets/styles/global.css);
+@import url(/assets/styles/reset.css);
+
 .footer {
   background-color: var(--bg-surface);
   border-top: 1px solid var(--border-color);

@@ -17,7 +17,7 @@ class Home extends HTMLElement {
                 </div>
 
                 <div class="hero-pic">
-                    <img src="/src/assets/hero/hero.jpg" >
+                    <img src="/assets/hero/hero.jpg" >
                 </div>
             </section>
 

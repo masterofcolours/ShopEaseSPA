@@ -16,9 +16,8 @@ class ProductGrid extends HTMLElement {
     return this._products;
   }
 
-  async connectedCallback() {
-    this._products = await getData();
-    
+   connectedCallback() {
+    this._products = getData();    
     this.render();
   }
 

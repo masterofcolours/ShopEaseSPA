@@ -15,9 +15,6 @@ class Header extends HTMLElement {
         this.shadowRoot.innerHTML = 
         `
             <style>
-                @import url(./assets/styles/global.css);
-                @import url(./assets/styles/reset.css);
-
                 .header {
                 z-index: var(--z-header);
                 background-color: var(--bg-surface);
@@ -217,6 +214,86 @@ class Header extends HTMLElement {
                 opacity: 0.85;
                 }
 
+
+                                :root {
+                --primary-color: #2563eb;
+                --primary-hover: #1d4ed8;
+                --primary-light: #eff6ff;
+
+                --accent-color: #f59e0b;
+                --danger-color: #ef4444;
+                --success-color: #10b981;
+
+                --bg-main: #f8fafc;
+                --bg-surface: #ffffff;
+                --bg-subtle: #f1f5f9;
+
+                --text-main: #0f172a;
+                --text-muted: #64748b;
+                --text-inverse: #ffffff;
+
+                --border-color: #e2e8f0;
+
+                --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+                --font-size-xs: 0.75rem;   /* 12px */
+                --font-size-sm: 0.875rem;  /* 14px */
+                --font-size-base: 1rem;    /* 16px */
+                --font-size-lg: 1.125rem;  /* 18px */
+                --font-size-xl: 1.25rem;   /* 20px */
+                --font-size-2xl: 1.5rem;   /* 24px */
+                --font-size-3xl: 1.875rem; /* 30px */
+
+                --font-weight-regular: 400;
+                --font-weight-medium: 500;
+                --font-weight-semibold: 600;
+                --font-weight-bold: 700;
+
+                --space-xs: 0.25rem;  /* 4px */
+                --space-sm: 0.5rem;   /* 8px */
+                --space-md: 1rem;     /* 16px */
+                --space-lg: 1.5rem;   /* 24px */
+                --space-xl: 2rem;     /* 32px */
+                --space-2xl: 3rem;    /* 48px */
+
+                --radius-sm: 0.375rem; /* 6px */
+                --radius-md: 0.5rem;   /* 8px */
+                --radius-lg: 0.75rem;  /* 12px */
+                --radius-full: 9999px;
+
+                --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+                --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+                --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+                --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+                --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+                --z-header: 100;
+                --z-drawer: 200;
+                --z-modal: 300;
+                --z-toast: 400;
+                }
+
+                body {
+                font-family: var(--font-family);
+                font-size: var(--font-size-base);
+                color: var(--text-main);
+                background-color: var(--bg-main);
+                }
+
+                #root {
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                }
+
+                .container {
+                width: 100%;
+                max-width: 1200px;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: var(--space-md);
+                padding-right: var(--space-md);
+                }
 
                 @media screen and (max-width: 992px) {
                 .main-header-inner {

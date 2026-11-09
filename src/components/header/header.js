@@ -14,276 +14,339 @@ class Header extends HTMLElement {
     render(){
         this.shadowRoot.innerHTML = 
         `
-            <style>
-                header {
-                    position: fixed;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    z-index: 100;
-                    background-color: #ffffff;
-                    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-                    overflow: hidden;
-                }
+        <style>
+            header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            }
 
-                .badge{
-                    position: absolute;
-                    background-color: red;
-                    width: 15px;
-                    height: 15px;
-                    border-radius: 50%;
-                    color: white !important;
-                    top: -10px;
-                    right: -10px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
+            .badge {
+            position: absolute;
+            background-color: red;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            color: white !important;
+            top: -10px;
+            right: -10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            }
 
-                .cart-btn{
-                    position: relative;
-                }
+            .cart-btn {
+            position: relative;
+            }
 
-                header > div {
-                padding: 1.5rem 1rem;
-                border-bottom: 1px solid #e2e8f0;
-                }
+            header > div {
+            padding: 1.5rem 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            }
 
-                header > div > div {
-                display: flex;
-                align-items: center;
+            header > div > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            }
+
+            header link-component[path="/"] {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            }
+
+            header link-component[path="/"] > div {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            }
+
+            header link-component[path="/"] > div > span {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+            letter-spacing: -0.5px;
+            }
+
+            header > div > div > div:nth-child(2) {
+            display: flex;
+            flex: 1;
+            max-width: 500px;
+            }
+
+            header input[type="text"] {
+            width: 100%;
+            padding: 0.5rem 1rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 0.875rem;
+            color: #0f172a;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-right: none;
+            border-radius: 0.5rem 0 0 0.5rem;
+            outline: none;
+            }
+
+            header input[type="text"]:focus {
+            border-color: #2563eb;
+            }
+
+            header > div > div > div:nth-child(2) > button {
+            background-color: #2563eb;
+            border: 1px solid #2563eb;
+            border-radius: 0 0.5rem 0.5rem 0;
+            cursor: pointer;
+            padding: 0;
+            }
+
+            header > div > div > div:nth-child(2) > button > link-component {
+            display: block;
+            padding: 0.5rem 1rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #ffffff;
+            text-decoration: none;
+            }
+
+            header > div > div > div:nth-child(3) {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            }
+
+            header > div > div > div:nth-child(3) > link-component {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            color: #0f172a;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 500;
+            }
+
+            header > div > div > div:nth-child(3) > link-component:hover {
+            color: #2563eb;
+            }
+
+            header > div > div > div:nth-child(3) > link-component > p {
+            margin: 0;
+            font-size: 0.75rem;
+            color: inherit;
+            }
+
+            header > div > div > div:nth-child(3) > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.25rem;
+            color: #0f172a;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            }
+
+            header > div > div > div:nth-child(3) > div:hover {
+            color: #2563eb;
+            }
+
+            header > div > div > div:nth-child(3) > div > span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: inherit;
+            }
+
+            header nav {
+            background-color: #ffffff;
+            padding: 0.5rem 1rem;
+            }
+
+            header nav > div {
+            max-width: 1200px;
+            margin: 0 auto;
+            }
+
+            header nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+            }
+
+            header nav ul li > link-component {
+            display: block;
+            padding: 1rem 0;
+            color: #0f172a;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-bottom: 2px solid transparent;
+            }
+
+            header nav ul li > link-component > p {
+            margin: 0;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: inherit;
+            }
+
+            header nav ul li > link-component:hover {
+            color: #2563eb;
+            border-bottom-color: #2563eb;
+            }
+
+            @media screen and (max-width: 1024px) {
+            header > div > div {
+                gap: 1rem;
+            }
+            }
+
+            @media screen and (max-width: 992px) {
+            header > div {
+                padding: 1rem;
+            }
+
+            header > div > div {
+                flex-wrap: wrap;
                 justify-content: space-between;
+            }
+
+            header > div > div > div:nth-child(2) {
+                order: 3;
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-top: 0.5rem;
+            }
+
+            header nav ul {
                 gap: 1.5rem;
-                max-width: 1200px;
-                margin: 0 auto;
-                }
+                overflow-x: auto;
+                white-space: nowrap;
+                padding-bottom: 0.25rem;
+                scrollbar-width: none;
+            }
 
-                header link-component[path="/"] {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                text-decoration: none;
-                }
+            header nav ul::-webkit-scrollbar {
+                display: none;
+            }
+            }
 
-                header link-component[path="/"] > div {
-                display: flex;
-                align-items: center;
-                gap: 2px;
-                }
+            @media screen and (max-width: 768px) {
+            header > div {
+                padding: 0.75rem 1rem;
+            }
 
-                header link-component[path="/"] > div > span {
-                font-size: 1.5rem;
-                font-weight: 700;
-                color: #2563eb;
-                letter-spacing: -0.5px;
-                }
+            header > div > div {
+                gap: 0.5rem;
+            }
 
-                header > div > div > div:nth-child(2) {
-                display: flex;
-                flex: 1;
-                max-width: 500px;
-                }
+            header link-component[path="/"] > div > span {
+                font-size: 1.25rem;
+            }
 
-                header input[type="text"] {
+            header link-component[path="/"] > div > svg {
+                width: 32px;
+                height: 32px;
+            }
+
+            header > div > div > div:nth-child(3) {
+                gap: 1rem;
+            }
+
+            header > div > div > div:nth-child(3) > link-component > p {
+                display: none;
+            }
+
+            header > div > div > div:nth-child(3) > div > span {
+                display: none;
+            }
+
+            header nav {
+                padding: 0.25rem 1rem;
+            }
+
+            header nav ul {
+                gap: 1.25rem;
+            }
+
+            header nav ul li > link-component {
+                padding: 0.5rem 0;
+                font-size: 0.75rem;
+            }
+
+            header nav ul li > link-component > p {
+                font-size: 0.75rem;
+            }
+            }
+
+            @media screen and (max-width: 480px) {
+            header {
                 width: 100%;
-                padding: 0.5rem 1rem;
-                font-family: system-ui, -apple-system, sans-serif;
-                font-size: 0.875rem;
-                color: #0f172a;
-                background-color: #f8fafc;
-                border: 1px solid #e2e8f0;
-                border-right: none;
-                border-radius: 0.5rem 0 0 0.5rem;
-                outline: none;
-                }
+            }
 
-                header input[type="text"]:focus {
-                border-color: #2563eb;
-                }
+            .nav-p{
+                font-size: 1rem;
+                margin: 0 10px;
+            }
 
-                header > div > div > div:nth-child(2) > button {
-                background-color: #2563eb;
-                border: 1px solid #2563eb;
-                border-radius: 0 0.5rem 0.5rem 0;
-                cursor: pointer;
-                padding: 0;
-                }
+            header > div {
+                padding: 0.5rem 0.75rem;
+            }
 
-                header > div > div > div:nth-child(2) > button > link-component {
-                display: block;
-                padding: 0.5rem 1rem;
-                font-family: system-ui, -apple-system, sans-serif;
-                font-size: 0.875rem;
-                font-weight: 500;
-                color: #ffffff;
-                text-decoration: none;
-                }
+            header link-component[path="/"] > div > span {
+                font-size: 1.1rem;
+            }
 
-                header > div > div > div:nth-child(3) {
+            header link-component[path="/"] > div > svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            header > div > div > div:nth-child(3) {
+                gap: 0.75rem;
+            }
+
+            header > div > div > div:nth-child(3) > link-component svg,
+            header > div > div > div:nth-child(3) > div svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            header input[type="text"] {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.75rem;
+            }
+
+            header > div > div > div:nth-child(2) > button > link-component {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.75rem;
+            }
+
+            nav {
                 display: flex;
+                justify-content: center;
                 align-items: center;
-                gap: 1.5rem;
-                }
+            }
 
-                header > div > div > div:nth-child(3) > link-component {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 0.25rem;
-                color: #0f172a;
-                text-decoration: none;
-                font-size: 0.75rem;
-                font-weight: 500;
-                }
-
-                header > div > div > div:nth-child(3) > link-component:hover {
-                color: #2563eb;
-                }
-
-                header > div > div > div:nth-child(3) > link-component > p {
-                margin: 0;
-                font-size: 0.75rem;
-                color: inherit;
-                }
-
-                header > div > div > div:nth-child(3) > div {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 0.25rem;
-                color: #0f172a;
-                font-size: 0.75rem;
-                font-weight: 500;
-                cursor: pointer;
-                }
-
-                header > div > div > div:nth-child(3) > div:hover {
-                color: #2563eb;
-                }
-
-                header > div > div > div:nth-child(3) > div > span {
-                font-size: 0.75rem;
-                font-weight: 500;
-                color: inherit;
-                }
-
-                header nav {
-                background-color: #ffffff;
-                padding: 0.5rem 1rem;
-                }
-
-                header nav > div {
-                max-width: 1200px;
-                margin: 0 auto;
-                }
-
-                header nav ul {
-                display: flex;
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                gap: 2rem;
-                }
-
-                header nav ul li > link-component {
-                display: block;
-                padding: 1rem 0;
-                color: #0f172a;
-                text-decoration: none;
-                font-size: 0.875rem;
-                font-weight: 500;
-                border-bottom: 2px solid transparent;
-                }
-
-                header nav ul li > link-component > p {
-                margin: 0;
-                font-size: 0.875rem;
-                font-weight: 500;
-                color: inherit;
-                }
-
-                header nav ul li > link-component:hover {
-                color: #2563eb;
-                border-bottom-color: #2563eb;
-                }
-
-                @media screen and (max-width: 992px) {
-                    header > div > div {
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                    }
-
-                    header > div > div > div:nth-child(2) {
-                        order: 3;
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                        margin-top: 0.5rem;
-                    }
-
-                    header nav ul {
-                        gap: 1.5rem;
-                        overflow-x: auto;
-                        white-space: nowrap;
-                        padding-bottom: 0.25rem;
-                    }
-                }
-
-                @media screen and (max-width: 768px) {
-                    header > div {
-                        padding: 0.75rem 1rem;
-                    }
-
-                    header > div > div {
-                        gap: 0.5rem;
-                    }
-
-                    header link-component[path="/"] > div > span {
-                        font-size: 1.25rem;
-                    }
-
-                    header link-component[path="/"] > div > svg {
-                        width: 32px;
-                        height: 32px;
-                    }
-
-                    header > div > div > div:nth-child(3) {
-                        gap: 1rem;
-                    }
-
-                    header > div > div > div:nth-child(3) > link-component > p {
-                        display: none;
-                    }
-
-                    header nav {
-                        padding: 0.25rem 1rem;
-                    }
-
-                    header nav ul {
-                        gap: 1.25rem;
-                    }
-
-                    header nav ul li > link-component {
-                        padding: 0.5rem 0;
-                        font-size: 0.75rem;
-                    }
-
-                    header nav ul li > link-component > p {
-                        font-size: 0.75rem;
-                    }
-                    }
-
-                    @media screen and (max-width: 480px) {
-                        header {
-                            width: 100%;
-                        }
-                        nav{
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                        }
-
-                }
-                </style>
+            header nav ul {
+                gap: 1rem;
+                justify-content: flex-start;
+                width: 100%;
+            }
+            }
+            </style>
 
             <header>
                 <div>
@@ -325,22 +388,22 @@ class Header extends HTMLElement {
                         <ul>
                             <li>
                                 <link-component name="home" path="/">
-                                    <p>Home</p>
+                                    <p class="nav-p">Home</p>
                                 </link-component>
                             </li>
                             <li>
                                 <link-component name="shop" path="/shop/">
-                                    <p>Shop</p>
+                                    <p class="nav-p">Shop</p>
                                 </link-component>
                             </li>
                             <li>
                                 <link-component name="about" path="/about/">
-                                    <p>About</p>
+                                    <p class="nav-p">About</p>
                                 </link-component>
                             </li>
                             <li>
                                 <link-component name="brands" path="/brands/">
-                                    <p>Brands</p>
+                                    <p class="nav-p">Brands</p>
                                 </link-component>
                             </li>
                         </ul>

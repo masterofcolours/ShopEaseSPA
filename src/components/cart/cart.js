@@ -54,61 +54,121 @@ class Cart extends HTMLElement {
 
     this.shadowRoot.innerHTML = `
     <style>
-        :host{
+      :host {
         display: block;
+        width: 100%;
       }
 
-      .cart{
-          width: 30vw;
-          max-height: 100vh;
-          min-height: 100vh;
-          overflow-y: auto;
-          position: fixed;
-          right: 0;
-          top: 0;
-          z-index: 10000;
-          background-color: var(--bg-surface);
-          border-left: 2px solid var(--border-color);
-          overflow-x: hidden;
-          
+      .cart {
+        width: 380px;
+        max-width: 100vw;
+        max-height: 100vh;
+        min-height: 100vh;
+        overflow-y: auto;
+        position: fixed;
+        right: 0;
+        top: 0;
+        z-index: 10000;
+        background-color: var(--bg-surface, #ffffff);
+        border-left: 2px solid var(--border-color, #e2e8f0);
+        overflow-x: hidden;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        box-shadow: -4px 0 15px rgba(0, 0, 0, 0.05);
       }
 
-      .top{
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0px 20px;
-          border-bottom: 2px solid var(--border-color);
-          flex-wrap: wrap;
+      .top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.25rem 1.25rem;
+        border-bottom: 2px solid var(--border-color, #e2e8f0);
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        background-color: var(--bg-surface, #ffffff);
+        position: sticky;
+        top: 0;
+        z-index: 10;
       }
 
-      svg{
-          cursor: pointer;
+      svg {
+        cursor: pointer;
+        transition: opacity 0.2s ease;
       }
 
-      p{
+      svg:hover {
+        opacity: 0.7;
+      }
+
+      p {
         text-align: center;
+        margin: 0;
+        font-size: 0.875rem;
+        color: var(--text-muted, #64748b);
       }
 
-      .price{
-        width: 49%;
-      }
-      .number{
-        width: 49%;
+      .price {
+        width: 48%;
+        text-align: left;
       }
 
-      h2{
-        width: 90%;
+      .number {
+        width: 48%;
+        text-align: right;
       }
 
-      .checkout-btn{
+      h2 {
+        width: calc(100% - 30px);
+        margin: 0;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text-main, #0f172a);
+      }
+
+      .checkout-btn {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--primary-color);
+        background-color: var(--primary-color, #2563eb);
+        border-radius: 0.5rem;
+        margin-top: 0.5rem;
+        transition: background-color 0.2s ease;
       }
 
+      .checkout-btn:hover {
+        background-color: #1d4ed8;
+      }
+
+      .checkout-btn link-component {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        text-decoration: none;
+        display: block;
+      }
+
+      .checkout-btn p {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.9375rem;
+        text-align: center;
+      }
+
+      @media screen and (max-width: 480px) {
+        .cart {
+          width: 100vw;
+        }
+
+        .top {
+          padding: 1rem 0.875rem;
+        }
+
+        h2 {
+          font-size: 1.125rem;
+        }
+      }
     </style>
 
     <div class="cart">

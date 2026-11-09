@@ -24,7 +24,6 @@ class ProductGrid extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = `
       <style>
-        
         :host {
           display: block;
           width: 100%;
@@ -34,7 +33,10 @@ class ProductGrid extends HTMLElement {
           display: grid;
           grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
           gap: var(--space-xl, 2rem);
-          padding: 1rem 10rem;
+          padding: 2rem 10rem;
+          max-width: 1400px;
+          margin: 0 auto;
+          box-sizing: border-box;
         }
 
         .empty-state {
@@ -43,6 +45,42 @@ class ProductGrid extends HTMLElement {
           color: var(--text-muted, #64748b);
           font-size: var(--font-size-lg, 1.125rem);
           grid-column: 1 / -1;
+        }
+
+        @media screen and (max-width: 1200px) {
+          .grid-container {
+            padding: 1.5rem 4rem;
+            gap: 1.5rem;
+          }
+        }
+
+        @media screen and (max-width: 992px) {
+          .grid-container {
+            padding: 1.5rem 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.25rem;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          .grid-container {
+            padding: 1rem 1rem;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+          }
+          
+          .empty-state {
+            padding: 2rem 1rem;
+            font-size: 1rem;
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          .grid-container {
+            padding: 0.75rem 0.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+          }
         }
       </style>
 

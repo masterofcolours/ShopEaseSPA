@@ -24,7 +24,7 @@ class Home extends HTMLElement {
                 }
 
                 .hero-pic{
-                    width: 49%;
+                    width: 100%;
                 }
 
                 .hero-pic img{
@@ -33,7 +33,7 @@ class Home extends HTMLElement {
                 }
 
                 .hero-text{
-                    width: 49%;
+                    width: 100%;
                 }
 
                 .hero-title {
@@ -174,9 +174,6 @@ class Home extends HTMLElement {
                     <link-component path="/shop/" name="shop" class="hero-btn">Shop Now</link-component>
                 </div>
 
-                <div class="hero-pic">
-                    <img src="./assets/hero/hero.jpg" >
-                </div>
             </section>
 
             <section class="section">

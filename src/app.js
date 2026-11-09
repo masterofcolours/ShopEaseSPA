@@ -16,7 +16,7 @@ class App extends HTMLElement {
 
             <style>
                 main{
-                    padding-top: 180px;
+                    padding-top: 150px;
                 }
             </style>
             <header-component></header-component>

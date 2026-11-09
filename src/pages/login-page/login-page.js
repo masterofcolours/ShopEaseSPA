@@ -1,3 +1,5 @@
+import { supabase } from "../../services/supabaseClient.js";
+import changePage from "../../utils/change-page.js";
 class LoginPage extends HTMLElement {
   constructor() {
     super();
@@ -6,23 +8,39 @@ class LoginPage extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    this.setupEventListeners()
   }
 
   setupEventListeners() {
-    // const form = this.shadowRoot.querySelector('form');
-    // form.addEventListener('submit', (e) => {
-    //   e.preventDefault();
+    const loginBtn = this.shadowRoot.querySelector('#login-btn');
+    loginBtn.addEventListener('click', async (event) => {
       
-    //   const email = this.shadowRoot.querySelector('#email').value;
-    //   const password = this.shadowRoot.querySelector('#password').value;
+      const email = this.shadowRoot.querySelector('#email').value.trim().toLowerCase();
+      const password = this.shadowRoot.querySelector('#password').value.trim().toLowerCase();
 
-    //   // شبیه‌سازی فرایند لاگین
-    //   console.log('Logging in with:', { email, password });
-      
-    //   // مثال: بعد از لاگین موفق، هدایت کاربر به صفحه اصلی یا پنل کاربری
-    //   window.history.pushState({}, '', '/shop');
-    //   window.dispatchEvent(new PopStateEvent('popstate'));
-    // });
+      if (!email || !password) {
+        alert('لطفاً ایمیل و رمز عبور را وارد کنید.');
+        return;
+      }
+
+      try {
+        const { data, error } = await supabase.auth.signInWithPassword({
+          email: email,
+          password: password,
+        });
+
+        if (error) {
+          alert('خطا در ورود: ' + error.message);
+          return;
+        }
+
+        changePage("/dashboard/")
+        window.history.pushState({}, '', "/dashboard/");
+
+      } catch (err) {
+        console.error('Unexpected error during sign in:', err);
+      }
+    });
   }
 
   render() {
@@ -193,7 +211,7 @@ class LoginPage extends HTMLElement {
               <a href="#" class="forgot-link">Forgot password?</a>
             </div>
 
-            <button type="submit" class="btn-submit">Sign In</button>
+            <button type="button" class="btn-submit" id="login-btn">Sign In</button>
           </form>
 
           <div class="register-prompt">

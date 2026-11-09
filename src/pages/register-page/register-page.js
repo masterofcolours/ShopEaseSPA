@@ -1,3 +1,5 @@
+import { supabase } from "../../services/supabaseClient.js";
+
 class RegisterPage extends HTMLElement {
   constructor() {
     super();
@@ -10,7 +12,44 @@ class RegisterPage extends HTMLElement {
   }
 
   setupEventListeners() {
+    const form = this.shadowRoot.querySelector('form');
     
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const fullName = this.shadowRoot.querySelector('#fullname').value.trim().toLowerCase();
+      const email = this.shadowRoot.querySelector('#email').value.trim().toLowerCase();
+      const password = this.shadowRoot.querySelector('#password').value.trim().toLowerCase();
+      const confirmPassword = this.shadowRoot.querySelector('#confirm-password').value;
+
+      if (password !== confirmPassword) {
+        alert('رمزهای عبور با هم مطابقت ندارند!');
+        return;
+      }
+
+      try {
+        const { data, error } = await supabase.auth.signUp({
+          email: email,
+          password: password,
+          options: {
+            data: {
+              full_name: fullName
+            }
+          }
+        });
+
+        if (error) {
+          alert(error.message);
+          return;
+        }
+
+
+      } catch (err) {
+        console.error(err);
+      }
+      
+    });
+
   }
 
   render() {

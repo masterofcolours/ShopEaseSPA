@@ -15,51 +15,142 @@ class CartItem extends HTMLElement {
         this.shadowRoot.innerHTML = 
         `
             <style>
-                :root{
+                :root {
+                display: block;
+                width: 100%;
+                }
+
+                .cart-item {
+                position: relative;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 2px solid var(--border-color, #e2e8f0);
+                margin: 10px 0;
+                padding: 15px 20px;
+                box-sizing: border-box;
+                background-color: #ffffff;
+                gap: 1rem;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
                     display: block;
                 }
 
-                .cart-item{
-                    position: relative;
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-around;
-                    align-items: center;
-                    border-bottom: 2px solid var(--border-color);
-                    margin: 10px 0;
-                    padding: 10px 20px;
+                .image-container {
+                width: 90px;
+                min-width: 90px;
+                height: 90px;
+                max-height: 100px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-sizing: border-box;
+                border-radius: 0.5rem;
+                background-color: #f8fafc;
+                border: 1px solid var(--border-color, #e2e8f0);
                 }
 
-                img{
-                    width: 100%;
-                    height: auto;
+                .image-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
                 }
 
-                .image-container{
-                    ax-width: 20%;
-                    min-width: 20%;
-                    max-height: 100px;
-                    overflow: hidden;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                .content {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                flex-grow: 1;
+                gap: 0.375rem;
+                padding: 10px 0;
+                }
+
+                .category {
+                font-size: 1rem;
+                font-weight: 600;
+                color: var(--text-main, #0f172a);
+                line-height: 1.4;
+                }
+
+                .footer {
+                font-size: 1rem;
+                color: var(--primary-color, #2563eb);
+                }
+
+                .close {
+                cursor: pointer;
+                position: relative;
+                top: auto;
+                right: auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.5rem;
+                transition: opacity 0.2s ease;
+                }
+
+                .close:hover {
+                opacity: 0.7;
+                }
+
+                @media screen and (max-width: 768px) {
+                .cart-item {
+                    padding: 12px 15px;
+                    gap: 0.75rem;
+                }
+
+                .image-container {
+                    width: 75px;
+                    min-width: 75px;
+                    height: 75px;
+                }
+
+                .category {
+                    font-size: 0.9375rem;
+                }
+
+                .footer {
+                    font-size: 0.9375rem;
+                }
+                }
+
+                @media screen and (max-width: 480px) {
+                .cart-item {
                     padding: 10px;
+                    gap: 0.5rem;
                 }
 
-                .content{
-                    max-width: 8%;
-                    min-width: 80%;
-                    padding: 20px 0;
+                .image-container {
+                    width: 60px;
+                    min-width: 60px;
+                    height: 60px;
+                    padding: 2px;
                 }
 
-                .close{
-                    cursor: pointer;
-                    position: absolute;
-                    top: 10px;
-                    right: 4rem !important;
+                .content {
+                    padding: 5px 0;
+                    gap: 0.25rem;
                 }
-            
-            </style>
+
+                .category {
+                    font-size: 0.875rem;
+                }
+
+                .footer {
+                    font-size: 0.875rem;
+                }
+
+                .close svg {
+                    width: 18px;
+                    height: 18px;
+                }
+                }
+                </style>
 
             <div class="cart-item">
                 <div class="image-container">

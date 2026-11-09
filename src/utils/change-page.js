@@ -16,6 +16,12 @@ function changePage (path){
         const componentInstance = new route.component(params);
         newRouter.outlet.appendChild(componentInstance);
     }
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
 }
 
 export default changePage;

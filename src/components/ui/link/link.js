@@ -1,3 +1,4 @@
+import { supabase } from "../../../services/supabaseClient.js";
 import changePage from "../../../utils/change-page.js";
 
 class Link extends HTMLElement {
@@ -73,21 +74,40 @@ class Link extends HTMLElement {
 
         this.path = this.getAttribute("path");
 
-        this.addEventListener("click", ()=>{
-            if(this.path.includes("product/")){
-                const targetPath = this.path;
+        this.addEventListener("click", async ()=>{
+
+            if(this.path === "/login/"){
+                const { data: { session }, error } = await supabase.auth.getSession();
+                if (error || !session) {
+                    const targetPath = this.path;
+                    window.history.pushState({}, '', targetPath);
+                    changePage("/login/")
+                    return;
+                }
+
+                const targetPath = "/dashboard/";
                 window.history.pushState({}, '', targetPath);
+                changePage("/dashboard/")
+                return;
+
             }else{
-                if(this.path  === "/"){
-                    const targetPath = `/ShopEaseSPA`;
+
+                if(this.path.includes("product/")){
+                    const targetPath = this.path;
                     window.history.pushState({}, '', targetPath);
                 }else{
-                    const targetPath = `/${this.getAttribute("name")}`;
-                    window.history.pushState({}, '', targetPath);
-                }            
+                    if(this.path  === "/"){
+                        const targetPath = `/ShopEaseSPA`;
+                        window.history.pushState({}, '', targetPath);
+                    }else{
+                        const targetPath = `/${this.getAttribute("name")}`;
+                        window.history.pushState({}, '', targetPath);
+                    }            
+                }
+                changePage(this.path)
             }
-            
-            changePage(this.path)
+
+
         })
 
     }

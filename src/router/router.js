@@ -2,6 +2,7 @@ import NOtFind from "../pages/404/404-page.js";
 import About from "../pages/about-page.js";
 import CheckoutPage from "../pages/checkout-page/checkout-page.js";
 import Contact from "../pages/contact-page.js";
+import DashboardPage from "../pages/dashboard-page/dashboard-page.js";
 import Home from "../pages/home-page.js";
 import LoginPage from "../pages/login-page/login-page.js";
 import RegisterPage from "../pages/register-page/register-page.js";
@@ -28,6 +29,11 @@ const routes = [
     { 
         path: '/register/', 
         component: RegisterPage,
+    },
+
+    { 
+        path: '/dashboard/', 
+        component: DashboardPage,
     },
 
     { 

@@ -46,7 +46,7 @@ class LoginPage extends HTMLElement {
           border: 1px solid var(--border-color, #e2e8f0);
           border-radius: var(--radius-lg, 0.75rem);
           padding: var(--space-2xl, 2.5rem);
-          width: 49%;
+          width: 100%;
           max-width: 420px;
           box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
         }
@@ -161,10 +161,6 @@ class LoginPage extends HTMLElement {
           text-decoration: underline;
         }
 
-        .login-image{
-          width: 49%
-        }
-
         .login-image img{
           width: 100%;
           margin-top: -30px;
@@ -207,11 +203,6 @@ class LoginPage extends HTMLElement {
             </link-component>
           </div>
         </div>
-
-        <div class="login-image">
-          <img src="./assets/login/login.png" >
-        </div>
-
       </div>
     `;
   }

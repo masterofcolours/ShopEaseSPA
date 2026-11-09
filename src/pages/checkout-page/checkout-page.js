@@ -41,12 +41,7 @@ class CheckoutPage extends HTMLElement {
           grid-template-columns: 1fr 400px;
           gap: var(--space-2xl, 2.5rem);
           align-items: start;
-        }
-
-        @media (max-width: 900px) {
-          .checkout-container {
-            grid-template-columns: 1fr;
-          }
+          box-sizing: border-box;
         }
 
         .section-card {
@@ -55,12 +50,14 @@ class CheckoutPage extends HTMLElement {
           border-radius: var(--radius-lg, 0.75rem);
           padding: var(--space-xl, 2rem);
           margin-bottom: var(--space-xl, 1.5rem);
+          box-sizing: border-box;
         }
 
         .section-title {
           font-size: 1.25rem;
           font-weight: var(--font-weight-semibold, 600);
           color: var(--text-main, #0f172a);
+          margin-top: 0;
           margin-bottom: var(--space-lg, 1.25rem);
           padding-bottom: var(--space-xs, 0.5rem);
           border-bottom: 1px solid var(--border-color, #e2e8f0);
@@ -98,7 +95,7 @@ class CheckoutPage extends HTMLElement {
           background-color: var(--bg-surface, #ffffff);
           color: var(--text-main, #0f172a);
           box-sizing: border-box;
-          transition: border-color 150s, box-shadow 150s;
+          transition: border-color 0.15s ease, box-shadow 0.15s ease;
         }
 
         .form-input:focus {
@@ -123,6 +120,12 @@ class CheckoutPage extends HTMLElement {
           cursor: pointer;
           font-weight: 500;
           color: var(--text-main, #0f172a);
+          transition: border-color 0.15s ease, background-color 0.15s ease;
+        }
+
+        .payment-option:hover {
+          background-color: var(--bg-subtle, #f8fafc);
+          border-color: var(--primary-color, #2563eb);
         }
 
         .summary-card {
@@ -132,6 +135,7 @@ class CheckoutPage extends HTMLElement {
           padding: var(--space-xl, 2rem);
           position: sticky;
           top: 2rem;
+          box-sizing: border-box;
         }
 
         .summary-items {
@@ -142,6 +146,7 @@ class CheckoutPage extends HTMLElement {
           flex-direction: column;
           gap: var(--space-sm, 0.75rem);
           padding-right: 0.5rem;
+          scrollbar-width: thin;
         }
 
         .summary-item {
@@ -149,6 +154,7 @@ class CheckoutPage extends HTMLElement {
           justify-content: space-between;
           font-size: var(--font-size-sm, 0.875rem);
           color: var(--text-muted, #64748b);
+          gap: 1rem;
         }
 
         .summary-item span:first-child {
@@ -194,6 +200,58 @@ class CheckoutPage extends HTMLElement {
 
         .btn-submit:hover {
           background-color: var(--primary-hover, #1d4ed8);
+        }
+
+        @media screen and (max-width: 1024px) {
+          .checkout-container {
+            grid-template-columns: 1fr 350px;
+            gap: 1.5rem;
+            padding: 2rem 1rem;
+          }
+        }
+
+        @media screen and (max-width: 900px) {
+          .checkout-container {
+            grid-template-columns: 1fr;
+          }
+
+          .summary-card {
+            position: static;
+          }
+        }
+
+        @media screen and (max-width: 768px) {
+          .checkout-container {
+            padding: 1.5rem 0.75rem;
+          }
+
+          .section-card,
+          .summary-card {
+            padding: 1.25rem;
+          }
+
+          .section-title {
+            font-size: 1.125rem;
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          .checkout-container {
+            padding: 1rem 0.5rem;
+          }
+
+          .form-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .form-group.full-width {
+            grid-column: span 1;
+          }
+
+          .section-card,
+          .summary-card {
+            padding: 1rem;
+          }
         }
       </style>
 

@@ -54,58 +54,60 @@ class Cart extends HTMLElement {
 
     this.shadowRoot.innerHTML = `
     <style>
-      :host{
-      display: block;
-    }
+        :host{
+        display: block;
+      }
 
-    .cart{
-        width: 30vw;
-        max-height: 100vh;
-        min-height: 100vh;
-        overflow-y: auto;
-        position: fixed;
-        right: 0;
-        top: 0;
-        z-index: 10000;
-        background-color: var(--bg-surface);
-        border-left: 2px solid var(--border-color);
-    }
+      .cart{
+          width: 30vw;
+          max-height: 100vh;
+          min-height: 100vh;
+          overflow-y: auto;
+          position: fixed;
+          right: 0;
+          top: 0;
+          z-index: 10000;
+          background-color: var(--bg-surface);
+          border-left: 2px solid var(--border-color);
+          overflow-x: hidden;
+          
+      }
 
-    .top{
+      .top{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0px 20px;
+          border-bottom: 2px solid var(--border-color);
+          flex-wrap: wrap;
+      }
+
+      svg{
+          cursor: pointer;
+      }
+
+      p{
+        text-align: center;
+      }
+
+      .price{
+        width: 49%;
+      }
+      .number{
+        width: 49%;
+      }
+
+      h2{
+        width: 90%;
+      }
+
+      .checkout-btn{
+        width: 100%;
         display: flex;
+        justify-content: center;
         align-items: center;
-        justify-content: space-between;
-        padding: 0px 20px;
-        border-bottom: 2px solid var(--border-color);
-        flex-wrap: wrap;
-    }
-
-    svg{
-        cursor: pointer;
-    }
-
-    p{
-      text-align: center;
-    }
-
-    .price{
-      width: 49%;
-    }
-    .number{
-      width: 49%;
-    }
-
-    h2{
-      width: 90%;
-    }
-
-    .checkout-btn{
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--primary-color);
-    }
+        background-color: var(--primary-color);
+      }
 
     </style>
 
@@ -126,7 +128,7 @@ class Cart extends HTMLElement {
     `;
 
     this.shadowRoot.querySelector("svg").addEventListener("click", ()=>{        
-        this.shadowRoot.querySelector(".cart").style.width = 0;
+        this.shadowRoot.querySelector(".cart").style.display = "none";
         cartElement.state = false;
     })
   }

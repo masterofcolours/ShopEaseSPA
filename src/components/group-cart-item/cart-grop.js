@@ -30,7 +30,7 @@ class GropCartItem extends HTMLElement {
                     align-items: center;
                     border-bottom:2px solid var(--border-color);
                     margin: 10px 0;
-                    padding: 10px 10px;
+                    padding: 10px 20px;
                 }
 
                 img{
@@ -66,7 +66,7 @@ class GropCartItem extends HTMLElement {
                     cursor: pointer;
                     position: absolute;
                     top: 10px;
-                    right: 10px;
+                    right: 4rem !important;
                 }
 
                 .count{

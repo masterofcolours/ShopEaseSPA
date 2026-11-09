@@ -17,7 +17,6 @@ class CartItem extends HTMLElement {
             <style>
                 :root{
                     display: block;
-                    
                 }
 
                 .cart-item{
@@ -26,9 +25,9 @@ class CartItem extends HTMLElement {
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
-                    border-bottom:2px solid var(--border-color);
+                    border-bottom: 2px solid var(--border-color);
                     margin: 10px 0;
-                    padding: 10px 10px;
+                    padding: 10px 20px;
                 }
 
                 img{
@@ -58,7 +57,7 @@ class CartItem extends HTMLElement {
                     cursor: pointer;
                     position: absolute;
                     top: 10px;
-                    right: 10px;
+                    right: 4rem !important;
                 }
             
             </style>

@@ -61,6 +61,7 @@ body {
   font-size: var(--font-size-base);
   color: var(--text-main);
   background-color: var(--bg-main);
+  overflow-x: hidden;
 }
 
 #root {

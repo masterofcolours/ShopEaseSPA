@@ -63,6 +63,7 @@ body {
   background-color: var(--bg-main);
   overflow-x: hidden;
   user-select: none;
+  
 }
 
 #root {

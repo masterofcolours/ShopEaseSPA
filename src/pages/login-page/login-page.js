@@ -1,4 +1,5 @@
 import { supabase } from "../../services/supabaseClient.js";
+import alertBox from "../../utils/alert-box.js";
 import changePage from "../../utils/change-page.js";
 class LoginPage extends HTMLElement {
   constructor() {
@@ -19,7 +20,7 @@ class LoginPage extends HTMLElement {
       const password = this.shadowRoot.querySelector('#password').value.trim().toLowerCase();
 
       if (!email || !password) {
-        alert('لطفاً ایمیل و رمز عبور را وارد کنید.');
+          alertBox.component.createAlert("warning", "Please enter your email")
         return;
       }
 
@@ -30,12 +31,13 @@ class LoginPage extends HTMLElement {
         });
 
         if (error) {
-          alert('خطا در ورود: ' + error.message);
+          alertBox.component.createAlert("error", error.message)
           return;
         }
 
         changePage("/dashboard/")
         window.history.pushState({}, '', "/dashboard/");
+        alertBox.component.createAlert("success", "You have successfully logged in!")
 
       } catch (err) {
         console.error('Unexpected error during sign in:', err);

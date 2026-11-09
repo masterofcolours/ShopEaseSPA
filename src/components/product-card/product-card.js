@@ -1,4 +1,5 @@
 import newStore from "../../store/cart-store.js";
+import alertBox from "../../utils/alert-box.js";
 import "../ui/link/link.js";
 class Product extends HTMLElement {
     constructor(){
@@ -221,8 +222,12 @@ class Product extends HTMLElement {
                     object: this,
                     price: Number(this.price),
                 }
-            )            
+            )
+            alertBox.component.createAlert("success", "Product added to cart")
         })
+
+        
+
         
     }
 

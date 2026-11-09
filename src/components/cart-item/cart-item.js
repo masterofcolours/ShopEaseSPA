@@ -1,4 +1,5 @@
 import newStore from "../../store/cart-store.js";
+import alertBox from "../../utils/alert-box.js";
 import "../ui/link/link.js";
 class CartItem extends HTMLElement {
     constructor(){
@@ -174,6 +175,7 @@ class CartItem extends HTMLElement {
         this.shadowRoot.querySelector(".close").addEventListener("click", ()=>{            
             newStore.deleteStore(this.id, this.price)
             this.remove();
+            alertBox.component.createAlert("success", "The product has been removed from the shopping cart.")
         })
         
     }

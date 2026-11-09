@@ -2,7 +2,8 @@ import newRouter from "./router/router.js";
 import changePage from "./utils/change-page.js";
 import "./components/header/header.js";
 import "./components/footer/footer.js";
-import "./pages/home-page.js"
+import "./pages/home-page.js";
+import "./components/Alert-box/alert-box.js";
 
 class App extends HTMLElement {
     constructor(){
@@ -16,10 +17,12 @@ class App extends HTMLElement {
 
             <style>
                 main{
-                    padding-top: 150px;
+                    padding-top: 180px;
                 }
             </style>
             <header-component></header-component>
+
+            <alert-box></alert-box>
 
             <cart-component></cart-component>
 

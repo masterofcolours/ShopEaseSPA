@@ -1,4 +1,5 @@
 import { supabase } from "../../services/supabaseClient.js";
+import alertBox from "../../utils/alert-box.js";
 import changePage from "../../utils/change-page.js";
 
 
@@ -47,7 +48,8 @@ class DashboardPage extends HTMLElement {
           return;
         }
         window.history.pushState({}, '', "/login/");
-        changePage("/login/")
+        changePage("/login/");
+        alertBox.component.createAlert("success", "You have logged out of your account.")
       });
     }
   }

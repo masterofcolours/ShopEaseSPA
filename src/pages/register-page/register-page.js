@@ -1,4 +1,5 @@
 import { supabase } from "../../services/supabaseClient.js";
+import alertBox from "../../utils/alert-box.js";
 
 class RegisterPage extends HTMLElement {
   constructor() {
@@ -23,7 +24,7 @@ class RegisterPage extends HTMLElement {
       const confirmPassword = this.shadowRoot.querySelector('#confirm-password').value;
 
       if (password !== confirmPassword) {
-        alert('رمزهای عبور با هم مطابقت ندارند!');
+        alertBox.component.createAlert("error", "The passwords do not match!")
         return;
       }
 
@@ -40,8 +41,11 @@ class RegisterPage extends HTMLElement {
 
         if (error) {
           alert(error.message);
+          alertBox.component.createAlert("error", error.message)
           return;
         }
+
+        alertBox.component.createAlert("success", "Your user account has been successfully created.")
 
 
       } catch (err) {

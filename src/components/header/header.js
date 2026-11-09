@@ -447,7 +447,7 @@ class Header extends HTMLElement {
             </header>
 
         `
-        returnSearchValue()
+        this.returnSearchValue()
         
         ;
 

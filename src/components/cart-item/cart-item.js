@@ -36,9 +36,8 @@ class CartItem extends HTMLElement {
                 }
 
                 .image-container{
-                    max-width: 100px;
-                    width: 100px;
-                    height: 100px;
+                    ax-width: 20%;
+                    min-width: 20%;
                     max-height: 100px;
                     overflow: hidden;
                     display: flex;

@@ -296,7 +296,7 @@ class Header extends HTMLElement {
                         </link-component>
 
                         <div>
-                            <input type="text" placeholder="Search products, categories...">
+                            <input class="search-input" type="text" placeholder="Search products, categories...">
                             <button type="submit">
                                 <link-component name="Search" path="/search-page/"> Search </link-component>
                             </button>

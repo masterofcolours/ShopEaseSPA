@@ -34,7 +34,7 @@ class GropCartItem extends HTMLElement {
                 }
 
                 img{
-                    width: 100px;
+                    width: 100%;
                     height: auto;
                 }
 

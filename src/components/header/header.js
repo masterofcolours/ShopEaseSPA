@@ -373,19 +373,6 @@ class Header extends HTMLElement {
                 }
             </style>
             <header class="header">
-                <div class="top-bar">
-                    <div class="container top-bar-inner">
-                    <div class="top-bar-info">
-                        <span>Free shipping on orders over $50</span>
-                        <span>Support: +1 (800) 123-4567</span>
-                    </div>
-                    <div class="top-bar-links">
-                        <a href="#">Order Tracking</a>
-                        <a href="#">Currency: USD</a>
-                    </div>
-                    </div>
-                </div>
-
                 <div class="main-header">
                     <div class="container main-header-inner">
                     <link-component path="/" name="home" class="brand-logo">

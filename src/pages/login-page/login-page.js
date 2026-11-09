@@ -212,6 +212,7 @@ class LoginPage extends HTMLElement {
             </div>
 
             <button type="button" class="btn-submit" id="login-btn">Sign In</button>
+            
           </form>
 
           <div class="register-prompt">

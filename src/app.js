@@ -3,7 +3,7 @@ import changePage from "./utils/change-page.js";
 import "./components/header/header.js";
 import "./components/footer/footer.js";
 import "./pages/home-page.js";
-import "./components/Alert-box/alert-box.js";
+import "./components/alertbox/alertitem.js";
 
 class App extends HTMLElement {
     constructor(){

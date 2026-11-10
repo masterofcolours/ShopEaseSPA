@@ -1,7 +1,5 @@
-
-
 import alertBox from "../../utils/alert-box.js";
-import "../Alert/alert.js";
+import "../alertitem/alert.js";
 
 class AlertBox extends HTMLElement {
     constructor() {

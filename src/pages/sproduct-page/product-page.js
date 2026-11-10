@@ -1,5 +1,6 @@
 import getData from "../../services/api.js";
 import newStore from "../../store/cart-store.js";
+import alertBox from "../../utils/alert-box.js";
 
 class SingleProduct extends HTMLElement {
     constructor(id){
@@ -191,7 +192,8 @@ class SingleProduct extends HTMLElement {
         this.shadowRoot.querySelector(".btn-add-to-cart").addEventListener("click", ()=>{
             for(let index = 1; index <= this.count; index++){
                 newStore.setStore({object: product, price: this.price})
-            }            
+            }
+            alertBox.component.createAlert("success", "Product added to cart.");
         })
     }
 

@@ -20,7 +20,7 @@ class LoginPage extends HTMLElement {
       const password = this.shadowRoot.querySelector('#password').value.trim().toLowerCase();
 
       if (!email || !password) {
-          alertBox.component.createAlert("warning", "Please enter your email")
+          alertBox.component.createAlert("warning", "Please enter your email");
         return;
       }
 
@@ -31,13 +31,13 @@ class LoginPage extends HTMLElement {
         });
 
         if (error) {
-          alertBox.component.createAlert("error", error.message)
+          alertBox.component.createAlert("error", error.message);
           return;
         }
 
         changePage("/dashboard/")
         window.history.pushState({}, '', "/dashboard/");
-        alertBox.component.createAlert("success", "You have successfully logged in!")
+        alertBox.component.createAlert("success", "You have successfully logged in!");
 
       } catch (err) {
         console.error('Unexpected error during sign in:', err);

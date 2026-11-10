@@ -1,7 +1,7 @@
 import NOtFind from "../pages/404/404-page.js";
 import About from "../pages/about-page.js";
 import CheckoutPage from "../pages/checkout-page/checkout-page.js";
-import Contact from "../pages/contact-page.js";
+import ContactPage from "../pages/contact-page/contact-page.js";
 import DashboardPage from "../pages/dashboard-page/dashboard-page.js";
 import Home from "../pages/home-page.js";
 import LoginPage from "../pages/login-page/login-page.js";
@@ -53,14 +53,14 @@ const routes = [
         path: "/about/",
         component: About,
         children: [
-
-            {
-                name: "contact",
-                path: "/about/contact/",
-                component: Contact,
-            }
             
         ]
+    },
+
+    {
+        name: "contact",
+        path: "/contact/",
+        component: ContactPage,
     },
 
     { 

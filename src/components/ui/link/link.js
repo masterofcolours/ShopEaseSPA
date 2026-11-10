@@ -61,6 +61,8 @@ class Link extends HTMLElement {
                 color: var(--primary-color);
                 }
 
+                
+
             </style>
             <div class="custome-link">
                 <slot></slot>
@@ -74,7 +76,9 @@ class Link extends HTMLElement {
 
         this.path = this.getAttribute("path");
 
-        this.addEventListener("click", async ()=>{
+        const btn = this.shadowRoot.querySelector(".custome-link")
+
+        btn.addEventListener("click", async ()=>{
 
             if(this.path === "/login/"){
                 const { data: { session }, error } = await supabase.auth.getSession();

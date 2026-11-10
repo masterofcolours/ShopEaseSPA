@@ -26,6 +26,20 @@ class Header extends HTMLElement {
             overflow: hidden;
             }
 
+            .flex{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                gap: 2px;
+            }
+
+            .flex p{
+                margin-block-end: 0;
+                margin-block-start: 0;
+            }
+
             .badge {
             position: absolute;
             background-color: red;
@@ -297,8 +311,17 @@ class Header extends HTMLElement {
             }
 
             .nav-p{
-                font-size: 1rem;
-                margin: 0 10px;
+                font-size: 0.8rem;
+                margin: 0 5px;
+            }
+
+            .flex{
+                gap: 0;
+            }
+
+            .flex svg{
+                width: 15px !important;
+                height: 15px !important;
             }
 
             header > div {
@@ -370,10 +393,6 @@ class Header extends HTMLElement {
                                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                                 <p>Account</p>
                             </link-component>
-                            <link-component name="wishlist" path="/login/">
-                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                                <p>Wishlist</p>
-                            </link-component>
                             <div class="cart-btn" >
                                 <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
                                 <span>Cart</span>
@@ -388,22 +407,42 @@ class Header extends HTMLElement {
                         <ul>
                             <li>
                                 <link-component name="home" path="/">
-                                    <p class="nav-p">Home</p>
+                                    <div class="flex">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M22 22L2 22" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"></path> <path d="M2 11L10.1259 4.49931C11.2216 3.62279 12.7784 3.62279 13.8741 4.49931L22 11" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"></path> <path d="M15.5 5.5V3.5C15.5 3.22386 15.7239 3 16 3H18.5C18.7761 3 19 3.22386 19 3.5V8.5" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"></path> <path d="M4 22V9.5" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"></path> <path d="M20 22V9.5" stroke="#2563eb" stroke-width="1.5" stroke-linecap="round"></path> <path d="M15 22V17C15 15.5858 15 14.8787 14.5607 14.4393C14.1213 14 13.4142 14 12 14C10.5858 14 9.87868 14 9.43934 14.4393C9 14.8787 9 15.5858 9 17V22" stroke="#2563eb" stroke-width="1.5"></path> <path d="M14 9.5C14 10.6046 13.1046 11.5 12 11.5C10.8954 11.5 10 10.6046 10 9.5C10 8.39543 10.8954 7.5 12 7.5C13.1046 7.5 14 8.39543 14 9.5Z" stroke="#2563eb" stroke-width="1.5"></path> </g></svg>                                        
+                                        <p class="nav-p">Home</p>
+                                    </div>
                                 </link-component>
                             </li>
                             <li>
                                 <link-component name="shop" path="/shop/">
-                                    <p class="nav-p">Shop</p>
-                                </link-component>
-                            </li>
-                            <li>
-                                <link-component name="about" path="/about/">
-                                    <p class="nav-p">About</p>
+                                    <div class="flex">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <defs> <style>.cls-1{fill:none;stroke:#2563eb;stroke-miterlimit:10;stroke-width:1.91px;}</style> </defs> <g id="cart"> <circle class="cls-1" cx="10.07" cy="20.59" r="1.91"></circle> <circle class="cls-1" cx="18.66" cy="20.59" r="1.91"></circle> <path class="cls-1" d="M.52,1.5H3.18a2.87,2.87,0,0,1,2.74,2L9.11,13.91H8.64A2.39,2.39,0,0,0,6.25,16.3h0a2.39,2.39,0,0,0,2.39,2.38h10"></path> <polyline class="cls-1" points="7.21 5.32 22.48 5.32 22.48 7.23 20.57 13.91 9.11 13.91"></polyline> </g> </g></svg>
+                                        <p class="nav-p">Shop</p>
+                                    </div>
                                 </link-component>
                             </li>
                             <li>
                                 <link-component name="brands" path="/brands/">
-                                    <p class="nav-p">Brands</p>
+                                    <div class="flex">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 20H21V10C21 8.89543 20.1046 8 19 8H15M11 16H11.01M17 16H17.01M7 16H7.01M11 12H11.01M17 12H17.01M7 12H7.01M11 8H11.01M7 8H7.01M15 20V6C15 4.89543 14.1046 4 13 4H5C3.89543 4 3 4.89543 3 6V20H15Z" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                        <p class="nav-p">Brands</p>
+                                    </div>
+                                </link-component>
+                            </li>
+                            <li>
+                                <link-component name="about" path="/about/">
+                                    <div class="flex">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M9 17H13M9 13H13M9 9H10M17 18V21M17 15H17.01M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H13M13 3L19 9M13 3V7.4C13 7.96005 13 8.24008 13.109 8.45399C13.2049 8.64215 13.3578 8.79513 13.546 8.89101C13.7599 9 14.0399 9 14.6 9H19M19 9V11.5" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                        <p class="nav-p">About</p>
+                                    </div>
+                                </link-component>
+                            </li>
+                            <li>
+                                <link-component name="contact" path="/contact/">
+                                    <div class="flex">
+                                        <svg fill="#2563eb" width="20px" height="20px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M20,1H4A1,1,0,0,0,3,2V22a1,1,0,0,0,1,1H20a1,1,0,0,0,1-1V2A1,1,0,0,0,20,1ZM19,21H5V3H19ZM9,8.5a3,3,0,1,1,3,3A3,3,0,0,1,9,8.5Zm-2,9a5,5,0,0,1,10,0,1,1,0,0,1-2,0,3,3,0,0,0-6,0,1,1,0,0,1-2,0Z"></path></g></svg>
+                                        <p class="nav-p">Contact</p>
+                                    </div>
                                 </link-component>
                             </li>
                         </ul>

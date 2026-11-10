@@ -23,16 +23,16 @@ class Product extends HTMLElement {
                 }
 
                 .card {
-                background-color: #ffffff;
-                border: 1px solid #e2e8f0;
-                border-radius: 0.75rem;
-                overflow: hidden;
-                display: flex;
-                flex-direction: column;
-                transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
-                height: 100%;
-                width: 100%;
-                box-sizing: border-box;
+                    background-color: #ffffff;
+                    border: 1px solid #e2e8f0;
+                    border-radius: 0.75rem;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1);
+                    height: 100%;
+                    width: 100%;
+                    box-sizing: border-box;
                 }
 
                 .card:hover {
@@ -115,16 +115,16 @@ class Product extends HTMLElement {
                 }
 
                 .card > div:nth-child(2) > div:nth-child(3) > button {
-                background-color: #2563eb;
-                color: #ffffff;
-                border: none;
-                padding: 0.375rem 1rem;
-                font-size: 0.875rem;
-                font-weight: 500;
-                border-radius: 0.375rem;
-                cursor: pointer;
-                transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
-                white-space: nowrap;
+                    background-color: #2563eb;
+                    color: #ffffff;
+                    border: none;
+                    padding: 0.375rem 1rem;
+                    font-size: 0.875rem;
+                    font-weight: 500;
+                    border-radius: 0.375rem;
+                    cursor: pointer;
+                    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+                    white-space: nowrap;
                 }
 
                 .card > div:nth-child(2) > div:nth-child(3) > button:hover {

@@ -40,7 +40,7 @@ class AlertBox extends HTMLElement {
           .alert-box {
               width: 400px;
               max-width: calc(100vw - 40px);
-              min-height: 400px;
+              min-height: 100px;
               max-height: 400px;
               overflow-y: auto;
               overflow-x: hidden;

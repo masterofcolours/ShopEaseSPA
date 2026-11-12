@@ -46,6 +46,7 @@ class Link extends HTMLElement {
                     background-color: var(--primary-hover, #1d4ed8);
                 }
 
+
                 .custom-link p {
                     margin: 0;
                 }
@@ -61,11 +62,16 @@ class Link extends HTMLElement {
                 color: var(--primary-color);
                 }
 
-                
+                .menu-box{
+                    position: relative;
+                }
 
             </style>
             <div class="custome-link">
                 <slot></slot>
+                <div class="menu-box">
+                    <slot name="menu"><slot>
+                </div>
             </div>
 
         `

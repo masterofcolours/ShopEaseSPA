@@ -16,17 +16,16 @@ class Header extends HTMLElement {
         `
         <style>
             header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-            background-color: #ffffff;
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            overflow: hidden;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 100;
+                background-color: #ffffff;
+                box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             }
 
-            .flex{
+            .flex {
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -35,341 +34,400 @@ class Header extends HTMLElement {
                 gap: 2px;
             }
 
-            .flex p{
+            li {
+                position: relative;
+            }
+
+            slot {
+                position: relative;
+            }
+
+            .flex p {
                 margin-block-end: 0;
                 margin-block-start: 0;
             }
 
-            .badge {
-            position: absolute;
-            background-color: red;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            color: white !important;
-            top: -10px;
-            right: -10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            li:hover .menu-item {
+                display: flex;
             }
 
-            .cart-btn {
-            position: relative;
-            }
-
-            header > div {
-            padding: 1.5rem 1rem;
-            border-bottom: 1px solid #e2e8f0;
-            }
-
-            header > div > div {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            }
-
-            header link-component[path="/"] {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            }
-
-            header link-component[path="/"] > div {
-            display: flex;
-            align-items: center;
-            gap: 2px;
-            }
-
-            header link-component[path="/"] > div > span {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2563eb;
-            letter-spacing: -0.5px;
-            }
-
-            header > div > div > div:nth-child(2) {
-            display: flex;
-            flex: 1;
-            max-width: 500px;
-            }
-
-            header input[type="text"] {
-            width: 100%;
-            padding: 0.5rem 1rem;
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 0.875rem;
-            color: #0f172a;
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-right: none;
-            border-radius: 0.5rem 0 0 0.5rem;
-            outline: none;
-            }
-
-            header input[type="text"]:focus {
-            border-color: #2563eb;
-            }
-
-            header > div > div > div:nth-child(2) > button {
-            background-color: #2563eb;
-            border: 1px solid #2563eb;
-            border-radius: 0 0.5rem 0.5rem 0;
-            cursor: pointer;
-            padding: 0;
-            }
-
-            header > div > div > div:nth-child(2) > button > link-component {
-            display: block;
-            padding: 0.5rem 1rem;
-            font-family: system-ui, -apple-system, sans-serif;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: #ffffff;
-            text-decoration: none;
-            }
-
-            header > div > div > div:nth-child(3) {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            }
-
-            header > div > div > div:nth-child(3) > link-component {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.25rem;
-            color: #0f172a;
-            text-decoration: none;
-            font-size: 0.75rem;
-            font-weight: 500;
-            }
-
-            header > div > div > div:nth-child(3) > link-component:hover {
-            color: #2563eb;
-            }
-
-            header > div > div > div:nth-child(3) > link-component > p {
-            margin: 0;
-            font-size: 0.75rem;
-            color: inherit;
-            }
-
-            header > div > div > div:nth-child(3) > div {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.25rem;
-            color: #0f172a;
-            font-size: 0.75rem;
-            font-weight: 500;
-            cursor: pointer;
-            }
-
-            header > div > div > div:nth-child(3) > div:hover {
-            color: #2563eb;
-            }
-
-            header > div > div > div:nth-child(3) > div > span {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: inherit;
-            }
-
-            header nav {
-            background-color: #ffffff;
-            padding: 0.5rem 1rem;
-            }
-
-            header nav > div {
-            max-width: 1200px;
-            margin: 0 auto;
-            }
-
-            header nav ul {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 2rem;
-            }
-
-            header nav ul li > link-component {
-            display: block;
-            padding: 1rem 0;
-            color: #0f172a;
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            border-bottom: 2px solid transparent;
-            }
-
-            header nav ul li > link-component > p {
-            margin: 0;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: inherit;
-            }
-
-            header nav ul li > link-component:hover {
-            color: #2563eb;
-            border-bottom-color: #2563eb;
-            }
-
-            @media screen and (max-width: 1024px) {
-            header > div > div {
-                gap: 1rem;
-            }
-            }
-
-            @media screen and (max-width: 992px) {
-            header > div {
-                padding: 1rem;
-            }
-
-            header > div > div {
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-
-            header > div > div > div:nth-child(2) {
-                order: 3;
-                flex: 0 0 100%;
-                max-width: 100%;
-                margin-top: 0.5rem;
-            }
-
-            header nav ul {
-                gap: 1.5rem;
-                overflow-x: auto;
-                white-space: nowrap;
-                padding-bottom: 0.25rem;
-                scrollbar-width: none;
-            }
-
-            header nav ul::-webkit-scrollbar {
+            .menu-item {
                 display: none;
-            }
-            }
-
-            @media screen and (max-width: 768px) {
-            header > div {
-                padding: 0.75rem 1rem;
-            }
-
-            header > div > div {
-                gap: 0.5rem;
-            }
-
-            header link-component[path="/"] > div > span {
-                font-size: 1.25rem;
-            }
-
-            header link-component[path="/"] > div > svg {
-                width: 32px;
-                height: 32px;
+                flex-direction: column;
+                align-items: center;
+                width: 160px;
+                min-width: max-content;
+                height: auto;
+                background-color: white;
+                position: absolute;
+                top: 100%; 
+                left: 50%;
+                transform: translateX(-50%);
+                gap: 10px;
+                border: 1px solid #e2e8f0;
+                border-radius: 0.5rem;
+                padding: 12px 0;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+                margin-top: 5px;
             }
 
-            header > div > div > div:nth-child(3) {
-                gap: 1rem;
-            }
-
-            header > div > div > div:nth-child(3) > link-component > p {
-                display: none;
-            }
-
-            header > div > div > div:nth-child(3) > div > span {
-                display: none;
-            }
-
-            header nav {
-                padding: 0.25rem 1rem;
-            }
-
-            header nav ul {
-                gap: 1.25rem;
-            }
-
-            header nav ul li > link-component {
-                padding: 0.5rem 0;
-                font-size: 0.75rem;
-            }
-
-            header nav ul li > link-component > p {
-                font-size: 0.75rem;
-            }
-            }
-
-            @media screen and (max-width: 480px) {
-            header {
+            .menu-item link-component {
                 width: 100%;
+                text-align: center;
+                padding: 4px 12px;
+                box-sizing: border-box;
+                color: #0f172a;
+                font-size: 0.85rem;
+                text-decoration: none;
+                transition: background-color 0.15s ease, color 0.15s ease;
             }
 
-            .nav-p{
-                font-size: 0.8rem;
-                margin: 0 5px;
+            .menu-item link-component:hover {
+                background-color: #f8fafc;
+                color: #2563eb;
             }
 
-            .flex{
-                gap: 0;
-            }
-
-            .flex svg{
-                width: 15px !important;
-                height: 15px !important;
-            }
-
-            header > div {
-                padding: 0.5rem 0.75rem;
-            }
-
-            header link-component[path="/"] > div > span {
-                font-size: 1.1rem;
-            }
-
-            header link-component[path="/"] > div > svg {
-                width: 28px;
-                height: 28px;
-            }
-
-            header > div > div > div:nth-child(3) {
-                gap: 0.75rem;
-            }
-
-            header > div > div > div:nth-child(3) > link-component svg,
-            header > div > div > div:nth-child(3) > div svg {
-                width: 18px;
-                height: 18px;
-            }
-
-            header input[type="text"] {
-                padding: 0.4rem 0.75rem;
-                font-size: 0.75rem;
-            }
-
-            header > div > div > div:nth-child(2) > button > link-component {
-                padding: 0.4rem 0.75rem;
-                font-size: 0.75rem;
-            }
-
-            nav {
+            .badge {
+                position: absolute;
+                background-color: red;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                color: white !important;
+                top: -10px;
+                right: -10px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
             }
 
-            header nav ul {
-                gap: 1rem;
-                justify-content: flex-start;
+            .cart-btn {
+                position: relative;
+            }
+
+            header > div {
+                padding: 1.5rem 1rem;
+                border-bottom: 1px solid #e2e8f0;
+            }
+
+            header > div > div {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1.5rem;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            header link-component[path="/"] {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                text-decoration: none;
+            }
+
+            header link-component[path="/"] > div {
+                display: flex;
+                align-items: center;
+                gap: 2px;
+            }
+
+            header link-component[path="/"] > div > span {
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: #2563eb;
+                letter-spacing: -0.5px;
+            }
+
+            header > div > div > div:nth-child(2) {
+                display: flex;
+                flex: 1;
+                max-width: 500px;
+            }
+
+            header input[type="text"] {
                 width: 100%;
+                padding: 0.5rem 1rem;
+                font-family: system-ui, -apple-system, sans-serif;
+                font-size: 0.875rem;
+                color: #0f172a;
+                background-color: #f8fafc;
+                border: 1px solid #e2e8f0;
+                border-right: none;
+                border-radius: 0.5rem 0 0 0.5rem;
+                outline: none;
             }
+
+            header input[type="text"]:focus {
+                border-color: #2563eb;
             }
-            </style>
+
+            header > div > div > div:nth-child(2) > button {
+                background-color: #2563eb;
+                border: 1px solid #2563eb;
+                border-radius: 0 0.5rem 0.5rem 0;
+                cursor: pointer;
+                padding: 0;
+            }
+
+            header > div > div > div:nth-child(2) > button > link-component {
+                display: block;
+                padding: 0.5rem 1rem;
+                font-family: system-ui, -apple-system, sans-serif;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+            header > div > div > div:nth-child(3) {
+                display: flex;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            header > div > div > div:nth-child(3) > link-component {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.25rem;
+                color: #0f172a;
+                text-decoration: none;
+                font-size: 0.75rem;
+                font-weight: 500;
+            }
+
+            header > div > div > div:nth-child(3) > link-component:hover {
+                color: #2563eb;
+            }
+
+            header > div > div > div:nth-child(3) > link-component > p {
+                margin: 0;
+                font-size: 0.75rem;
+                color: inherit;
+            }
+
+            header > div > div > div:nth-child(3) > div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.25rem;
+                color: #0f172a;
+                font-size: 0.75rem;
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            header > div > div > div:nth-child(3) > div:hover {
+                color: #2563eb;
+            }
+
+            header > div > div > div:nth-child(3) > div > span {
+                font-size: 0.75rem;
+                font-weight: 500;
+                color: inherit;
+            }
+
+            header nav {
+                background-color: #ffffff;
+                padding: 0.5rem 1rem;
+            }
+
+            header nav > div {
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            header nav ul {
+                display: flex;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                gap: 2rem;
+            }
+
+            header nav ul li > link-component {
+                display: block;
+                padding: 1rem 0;
+                color: #0f172a;
+                text-decoration: none;
+                font-size: 0.875rem;
+                font-weight: 500;
+                border-bottom: 2px solid transparent;
+            }
+
+            header nav ul li > link-component > p {
+                margin: 0;
+                font-size: 0.875rem;
+                font-weight: 500;
+                color: inherit;
+            }
+
+            header nav ul li > link-component:hover {
+                color: #2563eb;
+                border-bottom-color: #2563eb;
+            }
+
+            @media screen and (max-width: 1024px) {
+                header > div > div {
+                    gap: 1rem;
+                }
+            }
+
+            @media screen and (max-width: 992px) {
+                header > div {
+                    padding: 1rem;
+                }
+
+                header > div > div {
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                }
+
+                header > div > div > div:nth-child(2) {
+                    order: 3;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    margin-top: 0.5rem;
+                }
+
+                header nav ul {
+                    gap: 1.5rem;
+                    overflow-x: auto;
+                    white-space: nowrap;
+                    padding-bottom: 0.25rem;
+                    scrollbar-width: none;
+                }
+
+                header nav ul::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                header > div {
+                    padding: 0.75rem 1rem;
+                }
+
+                header > div > div {
+                    gap: 0.5rem;
+                }
+
+                header link-component[path="/"] > div > span {
+                    font-size: 1.25rem;
+                }
+
+                header link-component[path="/"] > div > svg {
+                    width: 32px;
+                    height: 32px;
+                }
+
+                header > div > div > div:nth-child(3) {
+                    gap: 1rem;
+                }
+
+                header > div > div > div:nth-child(3) > link-component > p {
+                    display: none;
+                }
+
+                header > div > div > div:nth-child(3) > div > span {
+                    display: none;
+                }
+
+                header nav {
+                    padding: 0.25rem 1rem;
+                }
+
+                header nav ul {
+                    gap: 1.25rem;
+                }
+
+                header nav ul li > link-component {
+                    padding: 0.5rem 0;
+                    font-size: 0.75rem;
+                }
+
+                header nav ul li > link-component > p {
+                    font-size: 0.75rem;
+                }
+                
+                .menu-item {
+                    width: 140px;
+                    padding: 8px 0;
+                    gap: 6px;
+                }
+
+                .menu-item link-component {
+                    font-size: 0.75rem;
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                header {
+                    width: 100%;
+                }
+
+                .nav-p {
+                    font-size: 0.8rem;
+                    margin: 0 5px;
+                }
+
+                .flex {
+                    gap: 0;
+                }
+
+                .flex svg {
+                    width: 15px !important;
+                    height: 15px !important;
+                }
+
+                header > div {
+                    padding: 0.5rem 0.75rem;
+                }
+
+                header link-component[path="/"] > div > span {
+                    font-size: 1.1rem;
+                }
+
+                header link-component[path="/"] > div > svg {
+                    width: 28px;
+                    height: 28px;
+                }
+
+                header > div > div > div:nth-child(3) {
+                    gap: 0.75rem;
+                }
+
+                header > div > div > div:nth-child(3) > link-component svg,
+                header > div > div > div:nth-child(3) > div svg {
+                    width: 18px;
+                    height: 18px;
+                }
+
+                header input[type="text"] {
+                    padding: 0.4rem 0.75rem;
+                    font-size: 0.75rem;
+                }
+
+                header > div > div > div:nth-child(2) > button > link-component {
+                    padding: 0.4rem 0.75rem;
+                    font-size: 0.75rem;
+                }
+
+                nav {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                header nav ul {
+                    gap: 1rem;
+                    justify-content: flex-start;
+                    width: 100%;
+                }
+            }
+        </style>
 
             <header>
                 <div>
@@ -422,10 +480,27 @@ class Header extends HTMLElement {
                                 </link-component>
                             </li>
                             <li>
-                                <link-component name="brands" path="/brands/">
+                                <link-component name="brands" path="/brand/">
                                     <div class="flex">
                                         <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 20H21V10C21 8.89543 20.1046 8 19 8H15M11 16H11.01M17 16H17.01M7 16H7.01M11 12H11.01M17 12H17.01M7 12H7.01M11 8H11.01M7 8H7.01M15 20V6C15 4.89543 14.1046 4 13 4H5C3.89543 4 3 4.89543 3 6V20H15Z" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                                         <p class="nav-p">Brands</p>
+                                    </div>
+
+                                    
+                                    </link-component>
+                                    <div slot="menu" class="menu-item">
+                                        <link-component path="/brand/apple/" name="brand/apple"> Apple </link-component>
+                                        <link-component path="/brand/nike/" name="brand/nike"> Nike </link-component>
+                                        <link-component path="/brand/adidas/" name="brand/adidas"> Adidas </link-component>
+                                        <link-component path="/brand/samsung/" name="brand/samsung"> Samsung </link-component>
+                                        <link-component path="/brand/sony/" name="brand/sony"> Sony </link-component>
+                                    </div>
+                            </li>
+                            <li>
+                                <link-component name="blog" path="/blog/">
+                                    <div class="flex">
+                                        <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M11 20H21V10C21 8.89543 20.1046 8 19 8H15M11 16H11.01M17 16H17.01M7 16H7.01M11 12H11.01M17 12H17.01M7 12H7.01M11 8H11.01M7 8H7.01M15 20V6C15 4.89543 14.1046 4 13 4H5C3.89543 4 3 4.89543 3 6V20H15Z" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                        <p class="nav-p">Blog</p>
                                     </div>
                                 </link-component>
                             </li>

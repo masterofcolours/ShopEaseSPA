@@ -8,134 +8,160 @@ class About extends HTMLElement {
         this.shadowRoot.innerHTML =  
         `
             <style>
-                :host {
-                display: block;
-                width: 100%;
-                }
+        :host {
+          display: block;
+          width: 100%;
+        }
 
-                .about-container {
-                max-width: 1000px;
-                margin: 0 auto;
-                padding: var(--space-2xl, 3rem) var(--space-md, 1rem);
-                }
+        .about-container {
+          min-height: 85vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: var(--space-xl, 3rem) var(--space-md, 1rem);
+          box-sizing: border-box;
+        }
 
-                .hero-section {
-                text-align: center;
-                margin-bottom: var(--space-2xl, 3rem);
-                }
+        .about-wrapper {
+          width: 100%;
+          max-width: 900px;
+          display: flex;
+          flex-direction: column;
+          gap: 2.5rem;
+        }
 
-                .hero-title {
-                font-size: 2.5rem;
-                font-weight: var(--font-weight-bold, 700);
-                color: var(--text-main, #0f172a);
-                margin-bottom: var(--space-sm, 0.5rem);
-                letter-spacing: -1px;
-                }
+        .about-header {
+          text-align: center;
+          background-color: var(--bg-surface, #ffffff);
+          border: 1px solid var(--border-color, #e2e8f0);
+          border-radius: var(--radius-lg, 0.75rem);
+          padding: var(--space-2xl, 3rem) var(--space-xl, 2rem);
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
 
-                .hero-subtitle {
-                font-size: var(--font-size-lg, 1.125rem);
-                color: var(--text-muted, #64748b);
-                max-width: 600px;
-                margin: 0 auto;
-                line-height: 1.6;
-                }
+        .about-title {
+          font-size: 2.25rem;
+          font-weight: var(--font-weight-bold, 700);
+          color: var(--text-main, #0f172a);
+          margin: 0 0 1rem 0;
+          letter-spacing: -0.5px;
+        }
 
-                .content-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: var(--space-xl, 2rem);
-                margin-bottom: var(--space-2xl, 3rem);
-                }
+        .about-subtitle {
+          font-size: 1.1rem;
+          color: var(--text-muted, #64748b);
+          line-height: 1.7;
+          margin: 0 auto;
+          max-width: 700px;
+        }
 
-                .card {
-                background-color: var(--bg-surface, #ffffff);
-                border: 1px solid var(--border-color, #e2e8f0);
-                border-radius: var(--radius-lg, 0.75rem);
-                padding: var(--space-xl, 2rem);
-                display: flex;
-                flex-direction: column;
-                gap: var(--space-sm, 0.5rem);
-                }
+        .features-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
 
-                .card h3 {
-                font-size: 1.25rem;
-                font-weight: var(--font-weight-semibold, 600);
-                color: var(--text-main, #0f172a);
-                margin: 0;
-                }
+        .feature-card {
+          background-color: var(--bg-surface, #ffffff);
+          border: 1px solid var(--border-color, #e2e8f0);
+          border-radius: var(--radius-lg, 0.75rem);
+          padding: 2rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-                .card p {
-                font-size: var(--font-size-base, 1rem);
-                color: var(--text-muted, #64748b);
-                line-height: 1.6;
-                margin: 0;
-                }
+        .feature-card:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
 
-                .tech-stack {
-                background-color: var(--bg-subtle, #f1f5f9);
-                border-radius: var(--radius-lg, 0.75rem);
-                padding: var(--space-xl, 2rem);
-                text-align: center;
-                }
+        .feature-title {
+          font-size: 1.25rem;
+          font-weight: var(--font-weight-semibold, 600);
+          color: var(--text-main, #0f172a);
+          margin: 0 0 0.75rem 0;
+        }
 
-                .tech-stack h3 {
-                font-size: 1.5rem;
-                color: var(--text-main, #0f172a);
-                margin-bottom: var(--space-md, 1rem);
-                }
+        .feature-desc {
+          font-size: var(--font-size-sm, 0.875rem);
+          color: var(--text-muted, #64748b);
+          line-height: 1.6;
+          margin: 0;
+        }
 
-                .badges {
-                display: flex;
-                flex-wrap: wrap;
-                gap: var(--space-sm, 0.5rem);
-                justify-content: center;
-                }
+        .story-section {
+          background-color: var(--bg-subtle, #f8fafc);
+          border: 1px solid var(--border-color, #e2e8f0);
+          border-radius: var(--radius-lg, 0.75rem);
+          padding: 2.5rem;
+          text-align: center;
+        }
 
-                .badge {
-                background-color: var(--bg-surface, #ffffff);
-                color: var(--primary-color, #2563eb);
-                border: 1px solid var(--border-color, #e2e8f0);
-                padding: var(--space-xs, 0.25rem) var(--space-md, 1rem);
-                border-radius: var(--radius-full, 9999px);
-                font-size: var(--font-size-sm, 0.875rem);
-                font-weight: var(--font-weight-medium, 500);
-                }
-            </style>
+        .story-title {
+          font-size: 1.5rem;
+          font-weight: var(--font-weight-bold, 700);
+          color: var(--text-main, #0f172a);
+          margin: 0 0 1rem 0;
+        }
 
-            <div class="about-container">
-                <div class="hero-section">
-                <h1 class="hero-title">About Our Store</h1>
-                <p class="hero-subtitle">
-                    We are building a high-performance, lightweight Single Page Application (SPA) using purely modern Vanilla JavaScript and Web Components without heavy external frameworks.
-                </p>
-                </div>
+        .story-desc {
+          font-size: 0.95rem;
+          color: var(--text-muted, #64748b);
+          line-height: 1.8;
+          max-width: 750px;
+          margin: 0 auto;
+        }
 
-                <div class="content-grid">
-                <div class="card">
-                    <h3>Our Mission</h3>
-                    <p>
-                    To deliver an ultra-fast, smooth, and seamless shopping experience with zero framework overhead, focusing entirely on clean architecture and native web standards.
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>Pure Architecture</h3>
-                    <p>
-                    Built from scratch using Custom Elements, Shadow DOM, Custom SPA Routing via History API, and an autonomous reactive State Management store.
-                    </p>
-                </div>
-                </div>
+        @media (max-width: 768px) {
+          .features-grid {
+            grid-template-columns: 1fr;
+          }
+          
+          .about-title {
+            font-size: 1.75rem;
+          }
 
-                <div class="tech-stack">
-                <h3>Built With Core Technologies</h3>
-                <div class="badges">
-                    <span class="badge">Vanilla JavaScript (ES6+)</span>
-                    <span class="badge">Web Components</span>
-                    <span class="badge">Shadow DOM</span>
-                    <span class="badge">History API Router</span>
-                    <span class="badge">Pub/Sub State Management</span>
-                </div>
-                </div>
+          .about-header, .story-section {
+            padding: 2rem 1.25rem;
+          }
+        }
+      </style>
+
+      <div class="about-container">
+        <div class="about-wrapper">
+          
+          <div class="about-header">
+            <h1 class="about-title">Welcome to Our Store</h1>
+            <p class="about-subtitle">
+              Your ultimate destination for quality products, exceptional value, and a seamless online shopping experience tailored just for you.
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <h3 class="feature-title">Our Mission</h3>
+              <p class="feature-desc">
+                To empower our customers by providing access to top-tier products, transparent pricing, and a trustworthy shopping environment built around convenience and reliability.
+              </p>
             </div>
+
+            <div class="feature-card">
+              <h3 class="feature-title">Why Shop With Us?</h3>
+              <p class="feature-desc">
+                We prioritize your satisfaction above everything else. From secure checkout processes to dedicated customer support, we ensure your journey with us is smooth and enjoyable.
+              </p>
+            </div>
+          </div>
+
+          <div class="story-section">
+            <h3 class="story-title">Our Story</h3>
+            <p class="story-desc">
+              Founded with a passion for modern retail, our store has grown into a trusted community hub for shoppers worldwide. We continuously update our catalog and improve our services to meet your evolving needs, ensuring that every purchase you make brings maximum satisfaction and peace of mind.
+            </p>
+          </div>
+
+        </div>
+      </div>
 
 
         `

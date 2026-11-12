@@ -26,7 +26,7 @@ class Shop extends HTMLElement {
     }
 
     connectedCallback(){
-        this.render()
+        this.render();
     }
 
 }

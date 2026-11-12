@@ -318,22 +318,37 @@ class Home extends HTMLElement {
             <section class="section">
                 <h2 class="section-title">Trusted Brands</h2>
                 <div class="brands-grid">
-                <span class="brand-logo">NIKE</span>
-                <span class="brand-logo">ADIDAS</span>
-                <span class="brand-logo">APPLE</span>
-                <span class="brand-logo">SAMSUNG</span>
-                <span class="brand-logo">SONY</span>
+                <link-component path="/brand/nike/" name="brand/nike">
+                    <span class="brand-logo">NIKE</span>
+                </link-component>
+
+                <link-component path="/brand/adidas/" name="brand/adidas">
+                    <span class="brand-logo">ADIDAS</span>
+                </link-component>
+
+                <link-component path="/brand/apple/" name="brand/apple">
+                    <span class="brand-logo">APPLE</span>
+                </link-component>
+
+                <link-component path="/brand/samsung/" name="brand/samsung">
+                    <span class="brand-logo">SAMSUNG</span>
+                </link-component>
+
+                <link-component path="/brand/sony/" name="brand/sony">
+                    <span class="brand-logo">SONY</span>
+                </link-component>
+
                 </div>
             </section>
 
             <section>
-                <h2 class="section-title">Products<h2>
-                <product-grid></product-grid>
+                <h2 class="section-title">Electronics<h2>
+                <product-grid category="Electronics"></product-grid>
             <section/>
-
+            
             <section class="section">
-                <div class="banner-grid">
-                <div class="banner-card">
+            <div class="banner-grid">
+            <div class="banner-card">
                     <h3>Special Summer Sale</h3>
                     <p>Get up to 50% off on selected items this season.</p>
                     <a href="/shop" class="banner-btn" data-link>Explore</a>
@@ -342,9 +357,29 @@ class Home extends HTMLElement {
                     <h3>New Arrivals</h3>
                     <p>Check out the latest tech trends and innovations.</p>
                     <a href="/shop" class="banner-btn" data-link>Discover</a>
-                </div>
-                </div>
+                    </div>
+                    </div>
             </section>
+                    
+            <section>
+                <h2 class="section-title">Accessories<h2>
+                <product-grid category="Accessories"></product-grid>
+            <section/>
+
+            <section>
+                <h2 class="section-title">Home & Kitchen<h2>
+                <product-grid category="Home & Kitchen"></product-grid>
+            <section/>
+
+            <section>
+                <h2 class="section-title">Furniture<h2>
+                <product-grid category="Furniture"></product-grid>
+            <section/>
+            
+            <section>
+                <h2 class="section-title">Wearables<h2>
+                <product-grid category="Wearables"></product-grid>
+            <section/>
 
         `
     }

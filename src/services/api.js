@@ -190,13 +190,422 @@ const productsData = [
     "stock": 40,
     "description": "Qi-certified 15W dual-coil fast wireless charging station for smartphone and earbuds with intelligent temperature control.",
     "image": "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 121,
+    "title": "True Wireless Earbuds Pro",
+    "category": "Electronics",
+    "price": 129.99,
+    "rating": 4.7,
+    "stock": 45,
+    "description": "Active noise-canceling earbuds with spatial audio, sweat-resistant IPX5 rating, and a compact wireless charging case.",
+    "image": "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 122,
+    "title": "USB-C Multi-Port Hub Adapter",
+    "category": "Electronics",
+    "price": 49.99,
+    "rating": 4.5,
+    "stock": 65,
+    "description": "7-in-1 aluminum adapter featuring 4K HDMI output, 100W Power Delivery pass-through, SD card slots, and high-speed USB 3.0 ports.",
+    "image": "https://images.unsplash.com/photo-1625842268584-8f3296236761?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 123,
+    "title": "4K Ultra HD Streaming Webcam",
+    "category": "Electronics",
+    "price": 139.99,
+    "rating": 4.6,
+    "stock": 22,
+    "description": "Auto-framing 4K webcam with dual noise-reducing microphones, HDR light correction, and an integrated magnetic privacy shutter.",
+    "image": "https://images.unsplash.com/photo-1587826080692-f439cd0b70da?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 124,
+    "title": "Portable 1TB NVMe SSD",
+    "category": "Electronics",
+    "price": 109.99,
+    "rating": 4.9,
+    "stock": 38,
+    "description": "Pocket-sized solid-state drive delivering blazing 1050MB/s read speeds with shock-resistant ruggedized aluminum housing.",
+    "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 125,
+    "title": "Smart Wi-Fi Mesh Router System",
+    "category": "Electronics",
+    "price": 249.99,
+    "rating": 4.7,
+    "stock": 15,
+    "description": "Whole-home Wi-Fi 6 coverage up to 4,500 sq. ft. with seamless roaming, parental controls, and support for over 100 connected devices.",
+    "image": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 126,
+    "title": "Condenser USB Podcast Microphone",
+    "category": "Electronics",
+    "price": 99.99,
+    "rating": 4.8,
+    "stock": 29,
+    "description": "Broadcast-quality cardioid condenser microphone with zero-latency headphone monitoring, gain control dial, and weighted desktop stand.",
+    "image": "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 127,
+    "title": "Mini Smart Home Hub Speaker",
+    "category": "Electronics",
+    "price": 49.99,
+    "rating": 4.4,
+    "stock": 50,
+    "description": "Compact voice-controlled smart speaker with rich room-filling sound and built-in smart home automation capabilities.",
+    "image": "https://images.unsplash.com/photo-1543512214-318c7553f230?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 128,
+    "title": "Cast Iron Dutch Oven 6-Quart",
+    "category": "Home & Kitchen",
+    "price": 89.99,
+    "rating": 4.9,
+    "stock": 19,
+    "description": "Heavy-duty enameled cast iron pot offering superior heat retention and even distribution for slow-cooking, braising, and baking.",
+    "image": "https://images.unsplash.com/photo-1584990347449-fd98bc063110?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 129,
+    "title": "Digital Air Fryer 5.8-Quart",
+    "category": "Home & Kitchen",
+    "price": 119.99,
+    "rating": 4.7,
+    "stock": 32,
+    "description": "Oil-free rapid air circulation fryer with 11 one-touch presets, non-stick dishwasher-safe basket, and digital touchscreen.",
+    "image": "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 130,
+    "title": "Ultrasonic Aromatherapy Diffuser",
+    "category": "Home & Kitchen",
+    "price": 34.99,
+    "rating": 4.5,
+    "stock": 48,
+    "description": "Whisper-quiet essential oil diffuser with wood-grain finish, 7 soothing LED mood lights, and waterless auto shut-off safety.",
+    "image": "https://images.unsplash.com/photo-1602928321679-560bb453f190?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 131,
+    "title": "High-Speed Countertop Blender",
+    "category": "Home & Kitchen",
+    "price": 159.99,
+    "rating": 4.6,
+    "stock": 21,
+    "description": "1400-watt motor with hardened stainless steel blades capable of crushing ice, nuts, and frozen fruits into silky smoothies.",
+    "image": "https://images.unsplash.com/photo-1570222094114-d054a817e56b?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 132,
+    "title": "Organic Bamboo Cutting Board Set",
+    "category": "Home & Kitchen",
+    "price": 32.99,
+    "rating": 4.7,
+    "stock": 44,
+    "description": "Set of 3 antimicrobial, knife-friendly bamboo chopping boards featuring deep juice grooves and built-in side handles.",
+    "image": "https://images.unsplash.com/photo-1594385208974-2e75f8d7bb48?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 133,
+    "title": "Smart Wi-Fi Robot Vacuum",
+    "category": "Home & Kitchen",
+    "price": 279.99,
+    "rating": 4.6,
+    "stock": 14,
+    "description": "LiDAR navigation robotic vacuum with 3000Pa strong suction, automatic self-charging, and customizable no-go zones via mobile app.",
+    "image": "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 134,
+    "title": "HEPA True Air Purifier",
+    "category": "Home & Kitchen",
+    "price": 139.99,
+    "rating": 4.8,
+    "stock": 27,
+    "description": "3-stage H13 True HEPA filtration system capturing 99.97% of airborne allergens, dust, smoke, and pet dander with ultra-quiet sleep mode.",
+    "image": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 135,
+    "title": "Ceramic Matcha Tea Ceremony Set",
+    "category": "Home & Kitchen",
+    "price": 42.99,
+    "rating": 4.9,
+    "stock": 30,
+    "description": "Handcrafted stoneware matcha bowl with pouring spout, traditional bamboo whisk (chasen), scoop, and ceramic whisk holder.",
+    "image": "https://images.unsplash.com/photo-1582793988951-9aed5509eb97?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 136,
+    "title": "Chronograph Minimalist Wristwatch",
+    "category": "Wearables",
+    "price": 165.00,
+    "rating": 4.7,
+    "stock": 24,
+    "description": "Japanese quartz movement watch housed in a brushed stainless steel case with scratch-resistant sapphire crystal and Italian leather strap.",
+    "image": "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 137,
+    "title": "Smart Health Tracking Ring",
+    "category": "Wearables",
+    "price": 249.99,
+    "rating": 4.6,
+    "stock": 18,
+    "description": "Ultra-lightweight titanium smart ring monitoring heart rate variability, skin temperature, readiness score, and sleep stages 24/7.",
+    "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 138,
+    "title": "Rugged GPS Multisport Watch",
+    "category": "Wearables",
+    "price": 299.99,
+    "rating": 4.8,
+    "stock": 16,
+    "description": "Built to military standards with dual-frequency GPS, topographic maps, barometric altimeter, and 20-day battery endurance.",
+    "image": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 139,
+    "title": "Slim Activity Tracker Band",
+    "category": "Wearables",
+    "price": 59.99,
+    "rating": 4.4,
+    "stock": 55,
+    "description": "Featherlight waterproof fitness band with step counter, 24/7 heart rate monitoring, smartphone notifications, and 14-day battery.",
+    "image": "https://images.unsplash.com/photo-1575311373937-040b8e1fd5b6?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 140,
+    "title": "Bone Conduction Sport Headphones",
+    "category": "Wearables",
+    "price": 119.99,
+    "rating": 4.6,
+    "stock": 33,
+    "description": "Open-ear titanium frame headphones delivering audio through cheekbones while keeping you aware of traffic and surroundings.",
+    "image": "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 141,
+    "title": "Smart Audio Polarized Glasses",
+    "category": "Wearables",
+    "price": 179.99,
+    "rating": 4.3,
+    "stock": 20,
+    "description": "Stylish sunglasses with discreet open-ear directional speakers, touch temple controls, and integrated microphone for hands-free calls.",
+    "image": "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 142,
+    "title": "Hybrid Mechanical Smartwatch",
+    "category": "Wearables",
+    "price": 189.99,
+    "rating": 4.5,
+    "stock": 22,
+    "description": "Combines classic analog watch hands with a hidden E-Ink display for discreet notifications, step goals, and 30-day battery life.",
+    "image": "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 143,
+    "title": "Kids GPS Safety Smartwatch",
+    "category": "Wearables",
+    "price": 89.99,
+    "rating": 4.5,
+    "stock": 36,
+    "description": "Durable kid-friendly smartwatch featuring real-time GPS location tracking, SOS emergency button, two-way calling, and step games.",
+    "image": "https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 144,
+    "title": "RFID Blocking Leather Bifold Wallet",
+    "category": "Accessories",
+    "price": 44.99,
+    "rating": 4.8,
+    "stock": 52,
+    "description": "Slim top-grain vegetable-tanned leather wallet with built-in RFID shielding, quick-access card slot, and full bill compartment.",
+    "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 145,
+    "title": "Wool Felt Laptop Sleeve 14-Inch",
+    "category": "Accessories",
+    "price": 29.99,
+    "rating": 4.6,
+    "stock": 47,
+    "description": "Soft natural merino wool felt protective sleeve with genuine leather trim and an exterior pocket for charger and notebook.",
+    "image": "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 146,
+    "title": "Water-Resistant Tech Organizer Pouch",
+    "category": "Accessories",
+    "price": 36.99,
+    "rating": 4.7,
+    "stock": 41,
+    "description": "Clamshell travel organizer with elastic cable loops, zippered mesh pockets, and weather-sealed YKK zippers for chargers and dongles.",
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 147,
+    "title": "Canvas & Leather Weekender Duffel",
+    "category": "Accessories",
+    "price": 135.00,
+    "rating": 4.8,
+    "stock": 17,
+    "description": "Heavyweight waxed cotton canvas overnight travel bag reinforced with full-grain leather handles, brass hardware, and shoe compartment.",
+    "image": "https://images.unsplash.com/photo-1547949003-9792a18a2601?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 148,
+    "title": "Braided Nylon USB-C Fast Cable 2-Pack",
+    "category": "Accessories",
+    "price": 19.99,
+    "rating": 4.7,
+    "stock": 80,
+    "description": "6-foot reinforced Kevlar-core braided charging cables rated for 100W Power Delivery and 30,000+ bend lifespan.",
+    "image": "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 149,
+    "title": "Ergonomic Aluminum Laptop Stand",
+    "category": "Accessories",
+    "price": 45.99,
+    "rating": 4.8,
+    "stock": 39,
+    "description": "Elevates laptops to eye level for improved posture, featuring ventilated cooling design and non-slip silicone protective pads.",
+    "image": "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 150,
+    "title": "Compact Windproof Travel Umbrella",
+    "category": "Accessories",
+    "price": 28.99,
+    "rating": 4.5,
+    "stock": 58,
+    "description": "Auto-open and close compact umbrella built with 10 reinforced fiberglass ribs and Teflon-coated water-repellent canopy.",
+    "image": "https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 151,
+    "title": "Anti-Theft Crossbody Sling Bag",
+    "category": "Accessories",
+    "price": 54.99,
+    "rating": 4.6,
+    "stock": 34,
+    "description": "Everyday minimalist sling pack featuring slash-resistant fabric, lockable zippers, hidden back passport pocket, and magnetic buckle.",
+    "image": "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 152,
+    "title": "Ergonomic Mesh Office Chair",
+    "category": "Furniture",
+    "price": 289.99,
+    "rating": 4.7,
+    "stock": 16,
+    "description": "Breathable high-back mesh task chair with dynamic lumbar support, 3D adjustable armrests, and synchro-tilt recline lock.",
+    "image": "https://images.unsplash.com/photo-1505843490538-5133c6c7d0e1?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 153,
+    "title": "Mid-Century Walnut Coffee Table",
+    "category": "Furniture",
+    "price": 249.99,
+    "rating": 4.8,
+    "stock": 11,
+    "description": "Solid American walnut veneer coffee table featuring tapered wooden legs, beveled edges, and a spacious lower storage shelf.",
+    "image": "https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 154,
+    "title": "Scandinavian Boucle Accent Chair",
+    "category": "Furniture",
+    "price": 329.99,
+    "rating": 4.6,
+    "stock": 9,
+    "description": "Cozy textured ivory boucle lounge armchair supported by a sturdy solid oak frame for living rooms or reading corners.",
+    "image": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 155,
+    "title": "5-Tier Industrial Ladder Bookshelf",
+    "category": "Furniture",
+    "price": 139.99,
+    "rating": 4.5,
+    "stock": 20,
+    "description": "Space-saving wall-leaning bookcase combining matte black powder-coated steel framing with rustic oak wood shelves.",
+    "image": "https://images.unsplash.com/photo-1594620302200-9a762244a156?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 156,
+    "title": "Minimalist Solid Oak Nightstand",
+    "category": "Furniture",
+    "price": 149.99,
+    "rating": 4.7,
+    "stock": 18,
+    "description": "Bedside table crafted from sustainably sourced solid oak featuring a soft-close drawer and open cubby for books.",
+    "image": "https://images.unsplash.com/photo-1532372576444-dda954194ad0?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 157,
+    "title": "Velvet Storage Ottoman Bench",
+    "category": "Furniture",
+    "price": 119.99,
+    "rating": 4.6,
+    "stock": 23,
+    "description": "Tufted emerald velvet entryway or end-of-bed bench with hydraulic safety hinges revealing generous hidden blanket storage.",
+    "image": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 158,
+    "title": "Round Marble Top Bistro Side Table",
+    "category": "Furniture",
+    "price": 129.99,
+    "rating": 4.5,
+    "stock": 15,
+    "description": "Genuine white Carrara marble tabletop paired with a sleek brushed brass pedestal base for modern living spaces.",
+    "image": "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 159,
+    "title": "Modular Floating Wall Shelf Trio",
+    "category": "Furniture",
+    "price": 59.99,
+    "rating": 4.4,
+    "stock": 42,
+    "description": "Set of 3 concealed-bracket solid ash wood wall shelves ideal for displaying plants, framed art, and collectibles.",
+    "image": "https://images.unsplash.com/photo-1597072689227-8882273e8f6a?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 160,
+    "title": "Modern Tripod Floor Lamp",
+    "category": "Furniture",
+    "price": 109.99,
+    "rating": 4.7,
+    "stock": 21,
+    "description": "Mid-century standing lamp featuring solid walnut tripod legs, a linen drum shade, and a convenient foot-pedal switch.",
+    "image": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=600&auto=format&fit=crop&q=60"
+  },
+  {
+    "id": 161,
+    "title": "Dual Monitor Clamp Desk Riser",
+    "category": "Furniture",
+    "price": 89.99,
+    "rating": 4.8,
+    "stock": 27,
+    "description": "Full-motion gas-spring dual monitor arm mount supporting up to two 32-inch screens with integrated cable management channels.",
+    "image": "https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=600&auto=format&fit=crop&q=60"
   }
-]
+];
 
 function getData() {
-     
   return productsData;
-  
 }
 
 export default getData;
+

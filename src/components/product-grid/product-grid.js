@@ -3,6 +3,7 @@ import "../product-card/product-card.js";
 class ProductGrid extends HTMLElement {
   constructor() {
     super();
+    this.pagination = 8;
     this.attachShadow({ mode: 'open' });
     
   }
@@ -17,8 +18,107 @@ class ProductGrid extends HTMLElement {
   }
 
    connectedCallback() {
-    this._products = getData();    
+    this._products = getData();
+    
+    if(this.getAttribute("category")){
+      this._products = this._products.filter((item)=>{
+        return item.category === this.getAttribute("category");
+      })
+    }
+    
+    
     this.render();
+    
+    if(!this.getAttribute("category")){
+      
+      const box = this.shadowRoot.querySelector(".grid-container");
+      const boxPagination = this.shadowRoot.querySelector(".pagination-box");
+
+      box.innerHTML = "";
+
+      let paginationCount = Math.ceil(this._products.length / this.pagination);
+
+      
+      
+      let htmlString = document.createDocumentFragment();;
+      
+      for (let i = 1; i <= paginationCount; i++) {
+          const newpaginationItem = document.createElement("div");
+          newpaginationItem.setAttribute("class", "btn")
+          newpaginationItem.textContent = i;
+
+          newpaginationItem.addEventListener("click", (event)=>{
+          box.innerHTML = "";
+
+          const allBtns = this.shadowRoot.querySelectorAll(".btn");
+
+          allBtns.forEach((item)=>{
+            if(item === event.target){              
+              item.classList.add("active")
+            }else{
+              item.classList.remove("active")
+            }
+
+          })
+
+        
+          for (let j = (i * this.pagination - this.pagination); j <= (i * this.pagination - 1); j++){
+            const item = this._products[j];
+
+            console.log(j);
+            
+
+            if(item){
+              box.innerHTML += 
+              `
+                <product-component
+                    title="${item.title}" 
+                    price="${item.price}"
+                    id="${item.id}"
+                    category="${item.category}" 
+                    image="${item.image}">
+                </product-component>
+              `
+            }else{
+              break;
+            }
+          }
+
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+          
+        })
+        
+        
+        htmlString.appendChild(newpaginationItem)
+      }
+      boxPagination.appendChild(htmlString);
+      
+      for (let j = 0; j < 10; j++){
+        const item = this._products[j];
+
+        if(item){
+          box.innerHTML += 
+          `
+            <product-component
+                title="${item.title}" 
+                price="${item.price}"
+                id="${item.id}"
+                category="${item.category}" 
+                image="${item.image}">
+            </product-component>
+          `
+        }else{
+          break;
+        }
+      }
+      
+
+    }
+
+
   }
 
   render() {
@@ -45,6 +145,30 @@ class ProductGrid extends HTMLElement {
           color: var(--text-muted, #64748b);
           font-size: var(--font-size-lg, 1.125rem);
           grid-column: 1 / -1;
+        }
+
+        .pagination-box{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          padding: 20px 0;
+        }
+
+        .pagination-box div{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: white;
+          background-color: #bdbebf;
+          cursor: pointer;
+          padding: 5px 10px;
+          margin: 0 10px;
+          border-radius: 0.5rem;
+        }
+
+        .active{
+          background-color: #2563eb !important;
         }
 
         @media screen and (max-width: 1200px) {
@@ -99,6 +223,11 @@ class ProductGrid extends HTMLElement {
             : `<div class="empty-state">No products found.</div>`
         }
       </div>
+
+      <div class="pagination-box">
+      
+      </div>
+
     `;
   }
 }

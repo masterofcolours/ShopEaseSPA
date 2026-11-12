@@ -419,11 +419,13 @@ class Header extends HTMLElement {
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                    flex-wrap: wrap;
                 }
 
                 header nav ul {
-                    gap: 1rem;
-                    justify-content: flex-start;
+                    flex-wrap: wrap;
+                    gap: 1.2rem;
+                    justify-content: center;
                     width: 100%;
                 }
             }

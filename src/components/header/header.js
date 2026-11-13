@@ -16,7 +16,6 @@ class Header extends HTMLElement {
         `
         <style>
             header {
-                position: fixed;
                 top: 0;
                 left: 0;
                 width: 100%;

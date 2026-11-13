@@ -4,6 +4,7 @@ class ProductGrid extends HTMLElement {
   constructor() {
     super();
     this.pagination = 8;
+    this.productPageCount = 3;
     this.attachShadow({ mode: 'open' });
     
   }
@@ -24,6 +25,11 @@ class ProductGrid extends HTMLElement {
       this._products = this._products.filter((item)=>{
         return item.category === this.getAttribute("category");
       })
+    }
+
+    if(this.getAttribute("in-productpage")){
+      const shuffled = [...this._products].sort(() => 0.5 - Math.random());
+      this._products = shuffled.slice(0, 3);
     }
     
     
@@ -94,9 +100,13 @@ class ProductGrid extends HTMLElement {
         
         htmlString.appendChild(newpaginationItem)
       }
+
       boxPagination.appendChild(htmlString);
+
+      const allBtns = this.shadowRoot.querySelectorAll(".btn");
+      allBtns[0].classList.add("active");
       
-      for (let j = 0; j < 10; j++){
+      for (let j = 0; j < this.pagination; j++){
         const item = this._products[j];
 
         if(item){

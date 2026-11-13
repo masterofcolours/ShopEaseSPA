@@ -26,6 +26,14 @@ class SingleProduct extends HTMLElement {
                 display: block;
                 width: 100%;
                 }
+                .section-title {
+                    font-size: var(--font-size-2xl, 1.75rem);
+                    font-weight: var(--font-weight-bold, 700);
+                    color: var(--text-main, #0f172a);
+                    margin-top: 0;
+                    margin-bottom: var(--space-lg, 1.5rem);
+                    text-align: center;
+                }
                 .product-container {
                 max-width: 1200px;
                 margin: 0 auto;
@@ -171,6 +179,10 @@ class SingleProduct extends HTMLElement {
                 </div>
                 </div>
             </div>
+
+            <h2 class="section-title">Other Products</h2>
+
+            <product-grid category="${product.category}" in-productpage="true" ></product-grid>
             
 
         `

@@ -4,6 +4,8 @@ import "./components/header/header.js";
 import "./components/footer/footer.js";
 import "./pages/home-page.js";
 import "./components/alertbox/alertitem.js";
+import "./components/scroll-button/scroll-button.js";
+
 
 class App extends HTMLElement {
     constructor(){
@@ -23,6 +25,8 @@ class App extends HTMLElement {
             <header-component></header-component>
 
             <alert-box></alert-box>
+
+            <scroll-btn></scroll-btn>
 
             <cart-component></cart-component>
 

@@ -70,10 +70,6 @@ class ProductGrid extends HTMLElement {
         
           for (let j = (i * this.pagination - this.pagination); j <= (i * this.pagination - 1); j++){
             const item = this._products[j];
-
-            console.log(j);
-            
-
             if(item){
               box.innerHTML += 
               `
@@ -125,9 +121,7 @@ class ProductGrid extends HTMLElement {
         }
       }
       
-
     }
-
 
   }
 

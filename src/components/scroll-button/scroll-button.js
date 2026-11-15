@@ -42,9 +42,7 @@ class ScrollBTN extends HTMLElement {
         this.render();
         const btn = this.shadowRoot.querySelector(".btn");
         window.addEventListener('scroll', function() {
-            const totalHeight = document.documentElement.scrollHeight;
-            console.log((window.scrollY / totalHeight) * 100);
-            
+            const totalHeight = document.documentElement.scrollHeight;            
             if ((window.scrollY / totalHeight) * 100 > 50) {
                 btn.classList.add('show');
             } else {

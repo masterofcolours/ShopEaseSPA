@@ -1,5 +1,7 @@
+import { supabase } from "../../services/supabaseClient.js";
 import newStore from "../../store/cart-store.js";
 import alertBox from "../../utils/alert-box.js";
+import changePage from "../../utils/change-page.js";
 import "../ui/link/link.js";
 class Product extends HTMLElement {
     constructor(){
@@ -216,14 +218,24 @@ class Product extends HTMLElement {
     connectedCallback(){
         this.render();
         const addbtn = this.shadowRoot.querySelector(".btn-add");
-        addbtn.addEventListener("click", ()=>{
-            newStore.setStore(
-                {
-                    object: this,
-                    price: Number(this.price),
+        addbtn.addEventListener("click", async ()=>{
+            const { data: { session }, error } = await supabase.auth.getSession();
+                if (error || !session) {
+                    window.history.pushState({}, '', "/login");
+                    changePage("/login/");
+                    return;
+                }else{
+                    newStore.setStore(
+                        {
+                            object: this,
+                            price: Number(this.price),
+                        }
+                    )
+                    alertBox.component.createAlert("success", "Product added to cart");
                 }
-            )
-            alertBox.component.createAlert("success", "Product added to cart")
+
+            
+            
         })
 
         
